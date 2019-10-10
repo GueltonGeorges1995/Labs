@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
+use App\Navbaritem;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(NavBarItemsTableSeeder::class);
         // $this->call(UsersTableSeeder::class);
     }
 }

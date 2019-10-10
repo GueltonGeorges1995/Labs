@@ -46,10 +46,10 @@
 		<div class="responsive"><i class="fa fa-bars"></i></div>
 		<nav>
 			<ul class="menu-list">
-				<li><a href="/">Home</a></li>
-				<li><a href="/service">Services</a></li>
-				<li class="active"><a href="/blog">Blog</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="/">{{$navbaritems->homePage}}</a></li>
+				<li><a href="/service">{{$navbaritems->servicesPage}}</a></li>
+				<li class="active"><a href="/blog">{{$navbaritems->blogPage}}</a></li>
+				<li><a href="/contact">{{$navbaritems->contactPage}}</a></li>
 			</ul>
 		</nav>
 	</header>

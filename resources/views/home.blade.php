@@ -1,48 +1,14 @@
-@extends('templates.home')
+@extends('adminlte::page')
 
-@section('home.header') 
-    @include('templates.home.header') 
-@endsection
+@section('title', 'AdminLTE')
 
-@section('home.intro') 
-    @include('templates.home.intro') 
-@endsection
+@section('content_header')
+    <h1>Fuck les couleurs</h1>
+    <h2>Je code avec mon cul</h2>
+    <h3>LALALA LA LA </h3>
+@stop
 
-@section('home.about') 
-    @include('templates.home.about') 
-@endsection
+@section('content')
 
-
-@section('home.testimonials') 
-    @include('templates.home.testimonials') 
-@endsection
-
-@section('home.service') 
-    @include('templates.home.service') 
-@endsection
-
-@section('home.team') 
-    @include('templates.home.team') 
-@endsection
-
-
-@section('home.promotion') 
-    @include('templates.home.promotion') 
-@endsection
-
-@section('home.contact') 
-    @include('templates.home.contact') 
-@endsection
-
-@section('home.footer') 
-    @include('templates.home.footer') 
-@endsection
-
-
-
-
-
-
-
-
-
+    
+@stop

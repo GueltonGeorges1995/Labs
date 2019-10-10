@@ -11,16 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/service', function () {
-    return view('serviceView');
-});
 
-Route::get('/blog', function () {
-    return view('blogView');
-});
+// Route::get('/blog', function () {
+//     return view('blogView');
+// });
 
 Route::get('/contact', function () {
     return view('contactView');
@@ -29,3 +23,29 @@ Route::get('/contact', function () {
 Route::get('/blog-post', function () {
     return view('blogPostView');
 });
+Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
+
+
+
+
+// Home Controller
+Route::get('/', 'HomeviewController@index'); // Basic View
+Route::get('/','HomeControllers\HomeNavBarItemController@index'); // NavBarView
+
+// Services Controller 
+Route::get('/service', 'ServicesviewController@index'); //Basic View
+Route::get('/service','ServicesControllers\ServicesNavBarItemController@index');
+
+// Blog Controller
+Route::get('/blog', 'BlogviewController@index');
+Route::get('/blog','BlogControllers\BlogNavBarItemController@index');
+// Contact Controller
+Route::get('/contact', 'ContactviewController@index');
+Route::get('/contact','ContactControllers\ContactNavBarItemController@index');
+// BlogPost Controller
+Route::get('/blog-post', 'BlogInfoviewController@index');
+Route::get('/blog-post','BlogPostControllers\BlogPostNavBarItemController@index');
