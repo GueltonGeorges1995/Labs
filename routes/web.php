@@ -10,19 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Admin Controller
+Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index');
 
 
-// Route::get('/blog', function () {
-//     return view('blogView');
-// });
 
-Route::get('/contact', function () {
-    return view('contactView');
-});
-
-Route::get('/blog-post', function () {
-    return view('blogPostView');
-});
 Auth::routes();
 
 Route::get('/home', function() {
