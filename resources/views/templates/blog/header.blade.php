@@ -40,7 +40,9 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			<img src="img/logo.png" alt=""><!-- Logo -->
+			@if ($navbaritems->logoPath)
+				<img src="/storage/{{$navbaritems->logoPath}}" alt="" style="width:50px"><!-- Logo -->
+			@endif<!-- Logo -->
 		</div>
 		<!-- Navigation -->
 		<div class="responsive"><i class="fa fa-bars"></i></div>

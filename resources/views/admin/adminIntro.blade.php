@@ -13,7 +13,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" method="POST" action="/admin/navbar" enctype="multipart/form-data">
+  <form role="form" method="POST" action="/admin/header">
     @csrf
     @METHOD('PATCH')
     <div class="box-body">
@@ -37,11 +37,6 @@
         <label for="exampleInputEmail1">Page de contact : </label>
         <input type="text" class="form-control" value="{{$navbaritems->contactPage}}" name="contactPage">
       </div>
-
-      <div class="form-group">
-          <label for="exampleInputEmail1">Logo : </label>
-          <input type="file" class="form-control" value="{{$navbaritems->logoPath}}" name="logoPath">
-        </div>
 
       {{-- <div class="form-group">
         <label for="exampleInputEmail1">Page des posts : </label>

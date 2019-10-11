@@ -21,6 +21,12 @@ class AdminNavBarController extends Controller
         $navbaritems->blogPage = request('blogPage');
         $navbaritems->contactPage = request('contactPage');
 
+        if($request->hasFile('logoPath')){
+            $file = $request->file('logoPath');
+            $fileName = $file->store(env('IMG_LOGO_DIR'));
+            $navbaritems->logoPath = $fileName;
+        }
+
         $navbaritems->save();
 
         return  view ('/admin/adminNavBar',compact('navbaritems'));

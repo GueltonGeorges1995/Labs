@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Admin</b>LABS',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>LAB</b>S',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'blue-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -129,11 +129,11 @@ return [
        
         
         
-        ['header' => 'account_settings'],
+        ['header' => 'Changement du contenu'],
         [
             'text' => 'Barre de Navigation',
             'url'  => 'admin/navbar',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-map',
         ],
         [
             'text' => 'change_password',

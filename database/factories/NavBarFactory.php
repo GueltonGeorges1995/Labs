@@ -11,5 +11,6 @@ $factory->define(Navbaritem::class, function (Faker $faker) {
         'servicesPage'  =>  'Services',
         'blogPage'      =>  'Blog',
         'contactPage'   =>  'Contact',
+        'logoPath'   =>  'img/logo.png',
     ];
 });
