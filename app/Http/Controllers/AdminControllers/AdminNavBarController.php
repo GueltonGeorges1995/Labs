@@ -24,7 +24,7 @@ class AdminNavBarController extends Controller
         if($request->hasFile('logoPath')){
             $file = $request->file('logoPath');
             $fileName = $file->store(env('IMG_LOGO_DIR'));
-            $navbaritems->logoPath = $fileName;
+            $navbaritems->logoPath = "/storage/".$fileName;
         }
 
         $navbaritems->save();

@@ -21,11 +21,11 @@ class AdminIntroController extends Controller
         if($request->hasFile('imgPathIntro')){
             $file = $request->file('imgPathIntro');
             $fileName = $file->store(env('IMG_LOGO_DIR'));
-            $introitems->imgPathIntro = $fileName;
+            $introitems->imgPathIntro = "/storage/".$fileName;
         }
-
+        
         $introitems->save();
-
+        dd($introitems);
         return  view ('/admin/adminIntro',compact('introitems'));
     }
 }

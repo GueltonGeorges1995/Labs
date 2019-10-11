@@ -3,7 +3,7 @@
 		<div class="hero-content">
 			<div class="hero-center">
 				@if($introitems->imgPathIntro)
-					<img src="/storage/{{$introitems->imgPathIntro}}" alt="" style="width:"><!-- Logo -->
+					<img src="{{$introitems->imgPathIntro}}" alt="" style="width:"><!-- Logo -->
 				@endif
 				<p>{{$introitems->textIntro}}</p>
 			</div>

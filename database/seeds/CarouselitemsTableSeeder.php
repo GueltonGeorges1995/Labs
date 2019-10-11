@@ -12,6 +12,9 @@ class CarouselitemsTableSeeder extends Seeder
     public function run()
     {
         Carouselitem::create([
+            "imgPath"=>"img/02.jpg",
+        ]);
+        Carouselitem::create([
             "imgPath"=>"img/01.jpg",
         ]);
     }
