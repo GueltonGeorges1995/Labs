@@ -5,6 +5,7 @@ use App\User;
 use App\Navbaritem;
 use App\Introitem;
 use App\Carouselitem;
+use App\Service;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(NavBarItemsTableSeeder::class);
         // $this->call(UsersTableSeeder::class);
         // $this->call(IntroitemsTableSeeder::class);
-        $this->call(CarouselitemsTableSeeder::class);
+        // $this->call(CarouselitemsTableSeeder::class);
+        $this->call(ServicesTableSeeder::class);
     }
 }

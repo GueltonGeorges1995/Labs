@@ -42,6 +42,8 @@
 						</div>
 					</div>
 				</div>
+
+
 				<!-- single service -->
 				<div class="col-md-4 col-sm-6">
 					<div class="service">
@@ -78,6 +80,8 @@
 						</div>
 					</div>
 				</div>
+
+
 				<!-- single service -->
 				<div class="col-md-4 col-sm-6">
 					<div class="service">
@@ -114,6 +118,8 @@
 						</div>
 					</div>
 				</div>
+
+				
 			</div>
 			<div class="text-center">
 				<a href="" class="site-btn">Browse</a>
