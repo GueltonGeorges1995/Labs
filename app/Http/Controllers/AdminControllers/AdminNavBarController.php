@@ -11,5 +11,18 @@ class AdminNavBarController extends Controller
         $navbaritems =  Navbaritem::find(1);
         return  view ('/admin/adminNavBar',compact('navbaritems'));
 
-    } 
+    }
+    
+    public function store(Request $request){
+        $navbaritems =  Navbaritem::find(1);
+
+        $navbaritems->homePage = request('homePage');
+        $navbaritems->servicesPage = request('servicesPage');
+        $navbaritems->blogPage = request('blogPage');
+        $navbaritems->contactPage = request('contactPage');
+
+        $navbaritems->save();
+
+        return  view ('/admin/adminNavBar',compact('navbaritems'));
+    }
 }

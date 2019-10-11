@@ -12,6 +12,7 @@
 */
 // Admin Controller
 Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index');
+Route::patch('/admin/navbar','AdminControllers\AdminNavBarController@store');
 
 
 

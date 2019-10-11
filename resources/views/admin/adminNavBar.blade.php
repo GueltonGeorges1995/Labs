@@ -7,39 +7,51 @@
 @stop
 
 @section('content')
-<div class="row">
-    <div class="col-xs-12">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Noms des liens de la barre de navigation</h3>
-
-         
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-          <table class="table table-hover">
-            <tbody><tr>
-              <th>ID</th>
-              <th>Home Page</th>
-              <th>Services Page</th>
-              <th>Blog Page</th>
-              <th>Blog Post Page</th>
-              <th>Contact Page</th>
-            </tr>
-            <tr>
-            <td>{{$navbaritems->id}}</td>
-              <td>{{$navbaritems->homePage}}</td>
-              <td>{{$navbaritems->servicesPage}}</td>
-              <td>{{$navbaritems->blogPage}}</td>
-              <td><span class="label label-success">{{$navbaritems->blogPostPage}}</span></td>
-              <td>{{$navbaritems->contactPage}}</td>
-            </tr>
-          </tbody></table>
-        </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
-    </div>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Modification des liens de la barre de navigation</h3>
   </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form role="form" method="POST" action="/admin/navbar">
+    @csrf
+    @METHOD('PATCH')
+    <div class="box-body">
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Page d'accueil : </label>
+        <input type="text" class="form-control" value="{{$navbaritems->homePage}}" name="homePage">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Page de services : </label>
+        <input type="text" class="form-control" value="{{$navbaritems->servicesPage}}" name="servicesPage">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Page de blog : </label>
+        <input type="text" class="form-control" value="{{$navbaritems->blogPage}}" name="blogPage">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Page de contact : </label>
+        <input type="text" class="form-control" value="{{$navbaritems->contactPage}}" name="contactPage">
+      </div>
+
+      {{-- <div class="form-group">
+        <label for="exampleInputEmail1">Page des posts : </label>
+        <input type="text" class="form-control" value="{{$navbaritems->homePage}}">
+      </div> --}}
+     
+      
+      
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" class="btn btn-primary">Modifier les liens</button>
+    </div>
+  </form>
+</div>
     
 @stop

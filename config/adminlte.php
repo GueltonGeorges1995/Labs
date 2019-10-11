@@ -131,7 +131,7 @@ return [
         
         ['header' => 'account_settings'],
         [
-            'text' => 'Navbar',
+            'text' => 'Barre de Navigation',
             'url'  => 'admin/navbar',
             'icon' => 'fas fa-fw fa-user',
         ],
