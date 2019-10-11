@@ -13,43 +13,27 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" method="POST" action="/admin/header">
+  <form role="form" method="POST" action="/admin/intro" enctype="multipart/form-data">
     @csrf
     @METHOD('PATCH')
     <div class="box-body">
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Page d'accueil : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->homePage}}" name="homePage">
+        <label for="exampleInputEmail1">Text en dessous du Logo : </label>
+        <input type="text" class="form-control" value="{{$introitems->textIntro}}" name="textIntro">
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Page de services : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->servicesPage}}" name="servicesPage">
+        <label for="exampleInputEmail1">Logo: </label>
+        <input type="file" class="form-control" value="{{$introitems->imgPathIntro}}" name="imgPathIntro">
       </div>
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Page de blog : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->blogPage}}" name="blogPage">
-      </div>
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Page de contact : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->contactPage}}" name="contactPage">
-      </div>
-
-      {{-- <div class="form-group">
-        <label for="exampleInputEmail1">Page des posts : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->homePage}}">
-      </div> --}}
-     
       
       
     </div>
     <!-- /.box-body -->
 
     <div class="box-footer">
-      <button type="submit" class="btn btn-primary">Modifier les liens</button>
+      <button type="submit" class="btn btn-primary">Modifier le contenu</button>
     </div>
   </form>
 </div>

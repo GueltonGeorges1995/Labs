@@ -2,7 +2,9 @@
 	<div class="hero-section">
 		<div class="hero-content">
 			<div class="hero-center">
-				<img src="img/big-logo.png" alt="">
+				@if($introitems->imgPathIntro)
+					<img src="/storage/{{$introitems->imgPathIntro}}" alt="" style="width:"><!-- Logo -->
+				@endif
 			<p>{{$introitems->textIntro}}</p>
 			</div>
 		</div>

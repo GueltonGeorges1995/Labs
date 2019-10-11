@@ -129,15 +129,15 @@ return [
        
         
         
-        ['header' => 'Changement du contenu'],
+        ['header' => 'Changement du contenu de la home page'],
         [
             'text' => 'Barre de Navigation',
             'url'  => 'admin/navbar',
             'icon' => 'fas fa-fw fa-map',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Contenu Intro',
+            'url'  => 'admin/intro',
             'icon' => 'fas fa-fw fa-lock',
         ],
  

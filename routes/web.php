@@ -11,10 +11,12 @@
 |
 */
 // Admin Controller
+// NavBar
 Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index');
 Route::patch('/admin/navbar','AdminControllers\AdminNavBarController@store');
-
-
+// Intro section
+Route::get('/admin/intro','AdminControllers\AdminIntroController@index');
+Route::patch('/admin/intro','AdminControllers\AdminIntroController@store');
 
 Auth::routes();
 
