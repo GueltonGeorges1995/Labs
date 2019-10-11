@@ -14,9 +14,25 @@
 // NavBar
 Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index');
 Route::patch('/admin/navbar','AdminControllers\AdminNavBarController@store');
+
 // Intro section
 Route::get('/admin/intro','AdminControllers\AdminIntroController@index');
 Route::patch('/admin/intro','AdminControllers\AdminIntroController@store');
+
+// Carousel section
+Route::get('/admin/carousel','AdminControllers\AdminCarouselController@index');
+Route::patch('/admin/carousel','AdminControllers\AdminCarouselController@store');
+Route::get('/admin/carousel/{id}/delete','AdminControllers\AdminCarouselController@delete');
+
+
+
+
+
+
+
+
+
+
 
 Auth::routes();
 

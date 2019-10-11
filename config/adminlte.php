@@ -140,6 +140,11 @@ return [
             'url'  => 'admin/intro',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Images du Carousel',
+            'url'  => 'admin/carousel',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
  
        
     ],
