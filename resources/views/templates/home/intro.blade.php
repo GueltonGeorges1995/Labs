@@ -3,7 +3,7 @@
 		<div class="hero-content">
 			<div class="hero-center">
 				<img src="img/big-logo.png" alt="">
-				<p>Get your freebie template now!</p>
+			<p>{{$introitems->textIntro}}</p>
 			</div>
 		</div>
 		<!-- slider -->

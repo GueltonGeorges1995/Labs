@@ -42,7 +42,7 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-				@if ($navbaritems->logoPath)
+				@if($navbaritems->logoPath)
 					<img src="/storage/{{$navbaritems->logoPath}}" alt="" style="width:50px"><!-- Logo -->
 				@endif
 		
