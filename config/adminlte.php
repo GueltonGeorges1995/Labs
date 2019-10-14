@@ -129,7 +129,7 @@ return [
        
         
         
-        ['header' => 'Changement du contenu de la home page'],
+        ['header' => 'Changement du contenu du header'],
         [
             'text' => 'Barre de Navigation',
             'url'  => 'admin/navbar',
@@ -145,7 +145,12 @@ return [
             'url'  => 'admin/carousel',
             'icon' => 'fas fa-fw fa-lock',
         ],
- 
+        ['header' => 'Changement du contenu des services'],
+        [
+            'text' => 'Services',
+            'url'  => 'admin/service',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
     ],
 

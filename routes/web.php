@@ -25,8 +25,8 @@ Route::patch('/admin/carousel','AdminControllers\AdminCarouselController@store')
 Route::get('/admin/carousel/{id}/delete','AdminControllers\AdminCarouselController@delete');
 
 
-
-
+// Service section
+Route::get('/admin/service','AdminControllers\AdminServiceController@index');
 
 
 
