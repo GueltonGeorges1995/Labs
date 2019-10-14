@@ -8,6 +8,7 @@ use App\Introitem;
 use App\Carouselitem;
 use App\Service;
 use App\Aboutitem;
+use App\Testimonialitem;
 class HomeviewController extends Controller
 {
     public  function  index(){
@@ -16,8 +17,9 @@ class HomeviewController extends Controller
         $carouselitems =  Carouselitem::all();
         $servicetops = Service::all()->random(3);
         $aboutitems =  Aboutitem::find(1);
+        $testimonialitems = Testimonialitem::all();
         
         
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems'));
+    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems'));
     } 
 }

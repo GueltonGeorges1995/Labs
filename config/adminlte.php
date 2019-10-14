@@ -157,6 +157,12 @@ return [
             'url'  => 'admin/about',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions des témoiniages'],
+        [
+            'text' => 'Testimonials',
+            'url'  => 'admin/testimonial',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
     ],
 

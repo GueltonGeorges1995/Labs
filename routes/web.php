@@ -39,6 +39,22 @@ Route::get('/admin/about','AdminControllers\AdminAboutController@index');
 Route::patch('/admin/about','AdminControllers\AdminAboutController@store');
 
 
+// Testimonial section
+Route::get('/admin/testimonial','AdminControllers\AdminTestimonialController@index');
+Route::get('/admin/testimonial/{id}/delete','AdminControllers\AdminTestimonialController@delete');
+Route::patch('/admin/testimonial','AdminControllers\AdminTestimonialController@create');
+
+Route::get('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@indexStore');
+Route::patch('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@store');
+
+
+
+
+
+
+
+
+
 
 
 
