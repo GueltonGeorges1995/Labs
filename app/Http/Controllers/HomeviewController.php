@@ -18,8 +18,10 @@ class HomeviewController extends Controller
         $servicetops = Service::all()->random(3);
         $aboutitems =  Aboutitem::find(1);
         $testimonialitems = Testimonialitem::all();
+        $services = Service::paginate(9);
+        // $servicePage = Service::paginate(9);
         
         
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems'));
+    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services'));
     } 
 }

@@ -6,8 +6,25 @@
 				<h2>Get in <span>the Lab</span> and see the services</h2>
 			</div>
 			<div class="row">
+
+
+				@foreach ($services as $service)
+					<div class="col-md-4 col-sm-6">
+						<div class="service">
+							<div class="icon">
+							<i class="{{$service->logo}}"></i>
+							</div>
+							<div class="service-text">
+							<h2>{{$service->titre}}</h2>
+								<p>{{$service->text}}</p>
+							</div>
+						</div>
+					</div>
+				@endforeach
+
+
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-023-flask"></i>
@@ -17,9 +34,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-011-compass"></i>
@@ -29,9 +46,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-037-idea"></i>
@@ -41,11 +58,11 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-039-vector"></i>
@@ -55,9 +72,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-036-brainstorming"></i>
@@ -67,9 +84,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-026-search"></i>
@@ -79,11 +96,11 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-018-laptop-1"></i>
@@ -93,9 +110,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-043-sketch"></i>
@@ -105,9 +122,9 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
+				{{-- <div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
 							<i class="flaticon-012-cube"></i>
@@ -117,13 +134,16 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 				
 			</div>
+			
 			<div class="text-center">
 				<a href="" class="site-btn">Browse</a>
+				{{$services->links()}}
 			</div>
 		</div>
 	</div>
+	
 	<!-- services section end -->
