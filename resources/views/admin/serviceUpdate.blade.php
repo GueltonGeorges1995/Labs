@@ -15,51 +15,13 @@
 @stop
 
 @section('content')
-<div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-        
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tbody><tr>
-                  <th>ID</th>
-                  <th>Logo</th>
-                  <th>Title</th>
-                  <th>Text</th>
-                  <th>Delete</th>
-                  <th>Delete</th>
-                </tr>
-                @foreach ($services as $service)
-                    <tr>
-                        <td>{{$service->id}}</td>
-                        <td>
-                            <i class="{{$service->logo}}"></i>
-                        </td>
-                        <td>{{$service->titre}}</td>
-                        <td>{{$service->text}}</td>
-                        <td><a href="/admin/service/{{$service->id}}/delete" class="btn btn-danger">Delete</a></td>
-                        <td><a href="/admin/service/{{$service->id}}/update" class="btn btn-success">Update</a></td>
-                    </tr>
-                @endforeach
-                
-              </tbody></table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-      </div>
-
-
-
       <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Ajouter un nouveau service</h3>
+            <h3 class="box-title">{{$services->titre}}</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="/admin/service" enctype="multipart/form-data">
+        <form role="form" method="POST" action="/admin/service/{{$services->id}}/update" enctype="multipart/form-data">
                 @csrf
                 @METHOD('PATCH')
               <div class="box-body">
@@ -134,7 +96,7 @@
                         </div>
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-primary">Mettre à jour</button>
               </div>
             </form>
           </div>

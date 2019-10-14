@@ -27,6 +27,11 @@ Route::get('/admin/carousel/{id}/delete','AdminControllers\AdminCarouselControll
 
 // Service section
 Route::get('/admin/service','AdminControllers\AdminServiceController@index');
+Route::get('/admin/service/{id}/delete','AdminControllers\AdminServiceController@delete');
+Route::patch('/admin/service','AdminControllers\AdminServiceController@create');
+
+Route::get('/admin/service/{id}/update','AdminControllers\AdminServiceController@indexStore');
+Route::patch('/admin/service/{id}/update','AdminControllers\AdminServiceController@store');
 
 
 
