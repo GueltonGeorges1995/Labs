@@ -34,6 +34,10 @@ Route::get('/admin/service/{id}/update','AdminControllers\AdminServiceController
 Route::patch('/admin/service/{id}/update','AdminControllers\AdminServiceController@store');
 
 
+// About section
+Route::get('/admin/about','AdminControllers\AdminAboutController@index');
+Route::patch('/admin/about','AdminControllers\AdminAboutController@store');
+
 
 
 

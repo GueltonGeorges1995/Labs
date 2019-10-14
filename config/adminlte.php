@@ -151,6 +151,12 @@ return [
             'url'  => 'admin/service',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Changement du contenu de about'],
+        [
+            'text' => 'About',
+            'url'  => 'admin/about',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
     ],
 

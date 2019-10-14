@@ -12,7 +12,7 @@ class AboutitemsTableSeeder extends Seeder
     public function run()
     {
         Aboutitem::create([
-            "titre"=>"Get in the La and discover the world",
+            "titre"=>"Get in the Labs and discover the world",
 
             "textGauche"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.",
 
