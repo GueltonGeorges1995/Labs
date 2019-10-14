@@ -6,6 +6,7 @@ use App\Navbaritem;
 use App\Introitem;
 use App\Carouselitem;
 use App\Service;
+use App\Aboutitem;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         // $this->call(IntroitemsTableSeeder::class);
         // $this->call(CarouselitemsTableSeeder::class);
-        $this->call(ServicesTableSeeder::class);
+        // $this->call(ServicesTableSeeder::class);
+        // $this->call(AboutitemsTableSeeder::class);
     }
 }
