@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-8 offset-md-4">
 					<div class="section-title left">
-						<h2>What our clients say</h2>
+						<h2>{{$titres->testimonialTitre}}</h2>
 					</div>
 					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->

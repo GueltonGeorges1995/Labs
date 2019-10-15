@@ -163,6 +163,13 @@ return [
             'url'  => 'admin/testimonial',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions des titres'],
+        [
+            'text' => 'Titres',
+            'url'  => 'admin/titre',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+       
        
     ],
 

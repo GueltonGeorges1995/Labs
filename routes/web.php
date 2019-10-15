@@ -47,6 +47,9 @@ Route::patch('/admin/testimonial','AdminControllers\AdminTestimonialController@c
 Route::get('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@indexStore');
 Route::patch('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@store');
 
+// Titres section
+Route::get('/admin/titre','AdminControllers\AdminTitreController@index');
+Route::patch('/admin/titre','AdminControllers\AdminTitreController@store');
 
 
 
