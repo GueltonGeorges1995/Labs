@@ -10,6 +10,7 @@ use App\Service;
 use App\Aboutitem;
 use App\Testimonialitem;
 use App\Titre;
+use App\Team;
 class HomeviewController extends Controller
 {
     public  function  index(){
@@ -21,9 +22,17 @@ class HomeviewController extends Controller
         $testimonialitems = Testimonialitem::all();
         $services = Service::paginate(9);
         $titres = Titre::find(1);
+        
+        $teamboss = Team::where("boss",true)->get();
+        $teamnull1s = Team::where("boss",false)->get()->random(1);
+        $teamnull2s = Team::where("boss",false)->get()->random(1);
+        while ($teamnull1s[0]->id === $teamnull2s[0]->id) {
+            $teamnull2s = Team::where("boss",false)->get()->random(1);
+        }
+    
        
         
         
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres'));
+    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s'));
     } 
 }

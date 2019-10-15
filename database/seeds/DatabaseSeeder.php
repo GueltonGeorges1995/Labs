@@ -9,6 +9,7 @@ use App\Service;
 use App\Aboutitem;
 use App\Testimonialitem;
 use App\Titre;
+use App\Team;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(ServicesTableSeeder::class);
         // $this->call(AboutitemsTableSeeder::class);
         // $this->call(TestimonialitemsTableSeeder::class);
-        $this->call(TitresTableSeeder::class);
+        // $this->call(TitresTableSeeder::class);
+        $this->call(TeamsTableSeeder::class);
     }
 }
