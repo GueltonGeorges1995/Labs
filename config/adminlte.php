@@ -169,6 +169,12 @@ return [
             'url'  => 'admin/titre',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions des team'],
+        [
+            'text' => 'Team',
+            'url'  => 'admin/team',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
        
     ],

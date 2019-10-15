@@ -52,6 +52,18 @@ Route::get('/admin/titre','AdminControllers\AdminTitreController@index');
 Route::patch('/admin/titre','AdminControllers\AdminTitreController@store');
 
 
+// team section
+Route::get('/admin/team','AdminControllers\AdminTeamController@index');
+
+Route::patch('/admin/leader','AdminControllers\AdminTeamController@storeBoss');
+Route::patch('/admin/team','AdminControllers\AdminTeamController@create');
+
+Route::get('/admin/team/{id}/delete','AdminControllers\AdminTeamController@delete');
+
+Route::get('/admin/team/{id}/update','AdminControllers\AdminTeamController@indexStore');
+Route::patch('/admin/team/{id}/update','AdminControllers\AdminTeamController@store');
+
+
 
 
 
