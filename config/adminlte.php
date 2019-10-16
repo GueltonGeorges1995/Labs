@@ -187,6 +187,12 @@ return [
             'url'  => 'admin/project',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions des articles'],
+        [
+            'text' => 'Tags',
+            'url'  => 'admin/tag',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
         
        
        

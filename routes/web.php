@@ -81,6 +81,35 @@ Route::patch('/admin/project/{id}/update','AdminControllers\AdminProjectControll
 
 
 
+// ---- Article section ----
+
+// Tag section
+Route::get('/admin/tag','AdminControllers\AdminTagController@index');
+Route::patch('/admin/tag','AdminControllers\AdminTagController@create');
+
+Route::get('/admin/tag/{id}/delete','AdminControllers\AdminTagController@delete');
+
+Route::get('/admin/tag/{id}/update','AdminControllers\AdminTagController@indexStore');
+Route::patch('/admin/tag/{id}/update','AdminControllers\AdminTagController@store');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', function() {

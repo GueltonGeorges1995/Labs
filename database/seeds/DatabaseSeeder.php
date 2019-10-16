@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(NavBarItemsTableSeeder::class);
         // $this->call(UsersTableSeeder::class);
+
+        // $this->call(NavBarItemsTableSeeder::class);
         // $this->call(IntroitemsTableSeeder::class);
         // $this->call(CarouselitemsTableSeeder::class);
         // $this->call(ServicesTableSeeder::class);
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(TitresTableSeeder::class);
         // $this->call(TeamsTableSeeder::class);
         // $this->call(ContactsTableSeeder::class);
-        $this->call(ProjectsTableSeeder::class);
+        // $this->call(ProjectsTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
     }
 }

@@ -50,8 +50,6 @@ class AdminTeamController extends Controller
         // return  view ('/admin/adminCarousel',compact('carouselitems'));
         return redirect('/admin/team');
 
-
-
     }
 
     public  function  delete($id){
