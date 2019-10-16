@@ -84,9 +84,6 @@ class AdminTeamController extends Controller
  
 
         $teams->save();
-
-       
-
         
         return redirect('/admin/team');
     }

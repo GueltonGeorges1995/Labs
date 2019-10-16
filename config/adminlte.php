@@ -181,6 +181,13 @@ return [
             'url'  => 'admin/contact',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions des projets'],
+        [
+            'text' => 'Project',
+            'url'  => 'admin/project',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        
        
        
     ],

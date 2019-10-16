@@ -13,6 +13,7 @@ use App\Testimonialitem;
 use App\Titre;
 use App\Team;
 use App\Contact;
+use App\Project;
 class ServicesNavBarItemController extends Controller
 {
     public  function  index(){
@@ -38,8 +39,9 @@ class ServicesNavBarItemController extends Controller
        $servicegauches = $servicesgsm->take(3);
        $servicedroites = $servicesgsm->take(-3);
        
+        $projects = Project::all()->random(3);
+        // dd($projects);
         
-        
-    return  view ('serviceView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','servicesgsm','servicegauches','servicedroites'));
+    return  view ('serviceView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','servicesgsm','servicegauches','servicedroites','projects'));
     } 
 }

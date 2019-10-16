@@ -69,8 +69,14 @@ Route::get('/admin/contact','AdminControllers\AdminContactController@index');
 Route::patch('/admin/contact','AdminControllers\AdminContactController@store');
 
 
+// Project section
+Route::get('/admin/project','AdminControllers\AdminProjectController@index');
+Route::patch('/admin/project','AdminControllers\AdminProjectController@create');
 
+Route::get('/admin/project/{id}/delete','AdminControllers\AdminProjectController@delete');
 
+Route::get('/admin/project/{id}/update','AdminControllers\AdminProjectController@indexStore');
+Route::patch('/admin/project/{id}/update','AdminControllers\AdminProjectController@store');
 
 
 
