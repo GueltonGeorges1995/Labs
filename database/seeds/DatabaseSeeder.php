@@ -11,6 +11,7 @@ use App\Testimonialitem;
 use App\Titre;
 use App\Team;
 use App\Contact;
+use App\Project;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(TestimonialitemsTableSeeder::class);
         // $this->call(TitresTableSeeder::class);
         // $this->call(TeamsTableSeeder::class);
-        $this->call(ContactsTableSeeder::class);
+        // $this->call(ContactsTableSeeder::class);
+        $this->call(ProjectsTableSeeder::class);
     }
 }
