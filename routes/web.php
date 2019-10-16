@@ -64,8 +64,9 @@ Route::get('/admin/team/{id}/update','AdminControllers\AdminTeamController@index
 Route::patch('/admin/team/{id}/update','AdminControllers\AdminTeamController@store');
 
 
-
-
+// Contact section
+Route::get('/admin/contact','AdminControllers\AdminContactController@index');
+Route::patch('/admin/contact','AdminControllers\AdminContactController@store');
 
 
 

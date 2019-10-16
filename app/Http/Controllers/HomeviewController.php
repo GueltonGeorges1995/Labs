@@ -11,6 +11,7 @@ use App\Aboutitem;
 use App\Testimonialitem;
 use App\Titre;
 use App\Team;
+use App\Contact;
 class HomeviewController extends Controller
 {
     public  function  index(){
@@ -29,10 +30,12 @@ class HomeviewController extends Controller
         while ($teamnull1s[0]->id === $teamnull2s[0]->id) {
             $teamnull2s = Team::where("boss",false)->get()->random(1);
         }
+
+        $contacts = Contact::find(1);
     
        
         
         
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s'));
+    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
     } 
 }

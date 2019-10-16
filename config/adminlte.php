@@ -175,6 +175,12 @@ return [
             'url'  => 'admin/team',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestions de contacr'],
+        [
+            'text' => 'Contact',
+            'url'  => 'admin/contact',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
        
        
     ],
