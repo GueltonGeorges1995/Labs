@@ -86,9 +86,7 @@ Route::get('/home', function() {
 
 // Home Controller
 Route::get('/', 'HomeviewController@index'); // Basic View
-// Route::get('/','HomeControllers\HomeNavBarItemController@index'); // NavBarView
 
-// Route::get('/','HomeControllers\HomeIntroItemController@index'); // Intro
 
 // Services Controller 
 Route::get('/service', 'ServicesviewController@index'); //Basic View

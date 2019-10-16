@@ -1,4 +1,5 @@
 @extends('templates.service')
+@extends('templates.home')
 
 @section('service.header') 
     @include('templates.service.header') 
