@@ -12,6 +12,9 @@ use App\Titre;
 use App\Team;
 use App\Contact;
 use App\Project;
+use App\Tag;
+use App\Category;
+use App\Article;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -34,7 +37,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(ContactsTableSeeder::class);
         // $this->call(ProjectsTableSeeder::class);
         // $this->call(TagsTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
+        // $this->call(CategoriesTableSeeder::class);
+        $this->call(ArticlesTableSeeder::class);
 
     }
 }
