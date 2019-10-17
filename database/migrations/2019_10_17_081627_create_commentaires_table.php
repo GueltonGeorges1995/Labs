@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTmpsTable extends Migration
+class CreateCommentairesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateTmpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tmps', function (Blueprint $table) {
+        Schema::create('commentaires', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('tag_id')->unsigned();
-            $table->foreign('tag_id')->on('tags')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name');
+            $table->string('email');
+            $table->string('sujet');
+            $table->text('message');
+            $table->string('imgPath');
             $table->bigInteger('article_id')->unsigned();
             $table->foreign('article_id')->on('articles')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -30,6 +33,6 @@ class CreateTmpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tmps');
+        Schema::dropIfExists('commentaires');
     }
 }
