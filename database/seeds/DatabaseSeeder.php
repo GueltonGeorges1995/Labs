@@ -33,6 +33,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(TeamsTableSeeder::class);
         // $this->call(ContactsTableSeeder::class);
         // $this->call(ProjectsTableSeeder::class);
-        $this->call(TagsTableSeeder::class);
+        // $this->call(TagsTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+
     }
 }

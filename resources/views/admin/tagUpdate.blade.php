@@ -14,9 +14,6 @@
 
 @section('content')
 
-
-
-
     
       <div class="box box-primary">
             <div class="box-header with-border">
