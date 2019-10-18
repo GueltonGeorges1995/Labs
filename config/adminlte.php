@@ -193,6 +193,16 @@ return [
             'url'  => 'admin/tag',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Categories',
+            'url'  => 'admin/category',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Articles',
+            'url'  => 'admin/article',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
         
        
        

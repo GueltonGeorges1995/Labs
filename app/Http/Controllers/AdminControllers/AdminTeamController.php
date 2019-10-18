@@ -9,7 +9,8 @@ class AdminTeamController extends Controller
 {
     public  function  index(){
         $teams =  Team::all();
-        return  view ('/admin/adminTeam',compact('teams'));
+        $countBoss = $teams->count();
+        return  view ('/admin/adminTeam',compact('teams','countBoss'));
     }
 
     public function storeBoss(Request $request){
@@ -85,6 +86,9 @@ class AdminTeamController extends Controller
         
         return redirect('/admin/team');
     }
+
+
+
 
 
 }

@@ -38,7 +38,14 @@
                         <td>{{$team->name}}</td>
                         <td>{{$team->function}}</td>
                         <td>{{$team->boss}}</td>
-                        <td><a href="/admin/team/{{$team->id}}/delete" class="btn btn-danger">Delete</a></td>
+                        <td>
+                          @if ($countBoss>3)
+                            <a href="/admin/team/{{$team->id}}/delete" class="btn btn-danger">Delete</a>
+                          @else
+                            <a href="/admin/team/{{$team->id}}/delete" class="btn btn-danger disabled" disabled>Delete</a>
+                          @endif
+                          
+                        </td>
                         <td><a href="/admin/team/{{$team->id}}/update" class="btn btn-success">Update</a></td>
                     </tr>
                 @endforeach

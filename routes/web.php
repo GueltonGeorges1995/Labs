@@ -92,8 +92,16 @@ Route::get('/admin/tag/{id}/delete','AdminControllers\AdminTagController@delete'
 Route::get('/admin/tag/{id}/update','AdminControllers\AdminTagController@indexStore');
 Route::patch('/admin/tag/{id}/update','AdminControllers\AdminTagController@store');
 
+// Category section
+Route::get('/admin/category','AdminControllers\AdminCategoryController@index');
+Route::patch('/admin/category','AdminControllers\AdminCategoryController@create');
+Route::get('/admin/category/{id}/delete','AdminControllers\AdminCategoryController@delete');
+Route::get('/admin/category/{id}/update','AdminControllers\AdminCategoryController@indexStore');
+Route::patch('/admin/category/{id}/update','AdminControllers\AdminCategoryController@store');
 
-
+// Article section
+Route::get('/admin/article','AdminControllers\AdminArticleController@index')->middleware('auth');
+Route::patch('/admin/article','AdminControllers\AdminArticleController@create')->middleware('auth');
 
 
 
