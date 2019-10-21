@@ -20,7 +20,8 @@
 								<div class="post-meta">
 									<a href="">Loredana Papp</a>
 									<a href="">Design, Inspiration</a>
-									<a href="">2 Comments</a>
+									
+								<a href="">{{$article->commentaire->count()}} comments</a>
 								</div>
 								<p>{{$article->text}}</p>
 								<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>

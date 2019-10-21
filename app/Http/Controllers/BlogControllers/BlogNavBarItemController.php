@@ -16,6 +16,7 @@ use App\Contact;
 use App\Article;
 use App\Tag;
 Use App\Category;
+use App\Commentaire;
 class BlogNavBarItemController extends Controller
 {
     public  function  index(){
@@ -40,14 +41,20 @@ class BlogNavBarItemController extends Controller
        
         $tags = Tag::all();
         $categories = Category::all();
+
+        $commentaires = Commentaire::all();
         
-    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories'));
+       
+
+    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories','commentaires'));
     }
 
     public function indexStore($id){
         $articles =  Article::find($id);
         $tags = Tag::all();
         $categories = Category::all();
+
+      
         return  view('blogPostView', compact('articles','tags','categories'));
     }
 }

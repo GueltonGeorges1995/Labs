@@ -22,4 +22,8 @@ class Article extends Model
         }
         return $url;
     }
+
+    public function commentaire(){
+        return $this->hasMany(commentaire::class,'article_id','id');
+    }
 }
