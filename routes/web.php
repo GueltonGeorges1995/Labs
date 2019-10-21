@@ -102,6 +102,10 @@ Route::patch('/admin/category/{id}/update','AdminControllers\AdminCategoryContro
 // Article section
 Route::get('/admin/article','AdminControllers\AdminArticleController@index')->middleware('auth');
 Route::patch('/admin/article','AdminControllers\AdminArticleController@create')->middleware('auth');
+Route::get('/admin/article/{id}/delete','AdminControllers\AdminArticleController@delete');
+
+Route::get('/admin/article/{id}/update','AdminControllers\AdminArticleController@indexStore')->middleware('auth');
+Route::patch('/admin/article/{id}/update','AdminControllers\AdminArticleController@store')->middleware('auth');
 
 
 

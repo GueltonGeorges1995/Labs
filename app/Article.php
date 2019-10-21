@@ -15,5 +15,11 @@ class Article extends Model
         'imgPath', 'titre', 'text', 'published', 'user_id', 'category_id'
     ];
     
-    
+    public function getPathAttribute(){
+        $url = $this->imgPath;
+        if(stristr($this->imgPath , 'http') === false){
+            $url = 'storage/'. $this->imgPath;
+        }
+        return $url;
+    }
 }
