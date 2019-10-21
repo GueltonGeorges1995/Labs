@@ -37,6 +37,13 @@ class BlogInfoviewController extends Controller
        
         
         
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
+    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
     } 
+
+    public function indexStore($id){
+        $articles =  Article::find($id);
+        $tags = Tag::all();
+        $categories = Category::all();
+        return  view('blogPostView', compact('articles','tags','categories'));
+    }
 }

@@ -13,6 +13,9 @@ use App\Testimonialitem;
 use App\Titre;
 use App\Team;
 use App\Contact;
+use App\Article;
+use App\Tag;
+Use App\Category;
 class BlogNavBarItemController extends Controller
 {
     public  function  index(){
@@ -33,10 +36,18 @@ class BlogNavBarItemController extends Controller
         }
 
         $contacts = Contact::find(1);
-    
+        $articles = Article::paginate(3);
        
+        $tags = Tag::all();
+        $categories = Category::all();
         
-        
-    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
+    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories'));
+    }
+
+    public function indexStore($id){
+        $articles =  Article::find($id);
+        $tags = Tag::all();
+        $categories = Category::all();
+        return  view('blogPostView', compact('articles','tags','categories'));
     }
 }

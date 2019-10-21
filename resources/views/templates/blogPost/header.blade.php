@@ -39,22 +39,22 @@
 
 	<!-- Header section -->
 	<header class="header-section">
-		<div class="logo">
-			@if ($navbaritems->logoPath)
-				<img src="{{$navbaritems->logoPath}}" alt="" style="width:50px"><!-- Logo -->
-			@endif<!-- Logo -->
-		</div>
-		<!-- Navigation -->
-		<div class="responsive"><i class="fa fa-bars"></i></div>
-		<nav>
-			<ul class="menu-list">
-				<li><a href="/">{{$navbaritems->homePage}}</a></li>
-				<li><a href="/services">{{$navbaritems->servicesPage}}</a></li>
-				<li class="active"><a href="/blog">{{$navbaritems->blogPage}}</a></li>
-				<li><a href="/contact">{{$navbaritems->contactPage}}</a></li>
-			</ul>
-		</nav>
-	</header>
+			<div class="logo">
+				@if ($navbaritems->logoPath)
+					<img src="/{{$navbaritems->logoPath}}" alt="" style="width:50px"><!-- Logo -->
+				@endif<!-- Logo -->
+			</div>
+			<!-- Navigation -->
+			<div class="responsive"><i class="fa fa-bars"></i></div>
+			<nav>
+				<ul class="menu-list">
+					<li><a href="/">{{$navbaritems->homePage}}</a></li>
+					<li><a href="/service">{{$navbaritems->servicesPage}}</a></li>
+					<li class="active"><a href="/blog">{{$navbaritems->blogPage}}</a></li>
+					<li><a href="/contact">{{$navbaritems->contactPage}}</a></li>
+				</ul>
+			</nav>
+		</header>
 	<!-- Header section end -->
 
 
