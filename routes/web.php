@@ -149,6 +149,7 @@ Route::get('/contact', 'ContactviewController@index');
 Route::get('/contact','ContactControllers\ContactNavBarItemController@index');
 // BlogPost Controller
 Route::get('/blog-post/{id}', 'BlogInfoviewController@index');
-// Route::get('/blog-post/{id}', 'BlogInfoviewController@indexStore');
+
 Route::get('/blog-post/{id}','BlogPostControllers\BlogPostNavBarItemController@index');
+Route::patch('/blog-post/{id}/message','BlogPostControllers\BlogPostNavBarItemController@store');
 

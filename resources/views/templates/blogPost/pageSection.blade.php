@@ -17,7 +17,7 @@
                         <div class="post-meta">
                             <a href="">Loredana Papp</a>
                             <a href="">Design, Inspiration</a>
-                            <a href="">2 Comments</a>
+                            <a href="">{{$nbrcommentaire}} Comments</a>
                         </div>
                     <p>{{$article->text}}</p>
                     </div>
@@ -33,33 +33,38 @@
                     </div>
                     <!-- Post Comments -->
                     <div class="comments">
-                        <h2>Comments (2)</h2>
+
+                     
+                        <h2>Comments ({{$nbrcommentaire}})</h2>
+                       
+                        
                         <ul class="comment-list">
-                            <li>
-                                <div class="avatar">
-                                    <img src="img/avatar/01.jpg" alt="">
-                                </div>
-                                <div class="commetn-text">
-                                    <h3>Michael Smith | 03 nov, 2017 | Reply</h3>
-                                    <p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="avatar">
-                                    <img src="img/avatar/02.jpg" alt="">
-                                </div>
-                                <div class="commetn-text">
-                                    <h3>Michael Smith | 03 nov, 2017 | Reply</h3>
-                                    <p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
-                                </div>
-                            </li>
+
+                            @foreach ($commentaires as $commentaire)
+                                @if ($commentaire->article_id === $article->id)
+                                    <li>
+                                        
+                                        <div class="avatar">
+                                            <img src="/{{$commentaire->imgPath}}" alt="">
+                                        </div>
+                                        <div class="commetn-text">
+                                            <h3>{{$commentaire->sujet}}</h3>
+                                            <p>{{$commentaire->message}}</p>
+                                        </div>
+                                    </li>
+                                @endif
+                                
+                            @endforeach
                         </ul>
                     </div>
                     <!-- Commert Form -->
                     <div class="row">
                         <div class="col-md-9 comment-from">
                             <h2>Leave a comment</h2>
-                            <form class="form-class">
+
+                        <form class="form-class" method="POST" action="/blog-post/{{$article->id}}/message" enctype="multipart/form-data">
+                                    @csrf
+                                    @METHOD('PATCH')
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <input type="text" name="name" placeholder="Your name">
@@ -68,12 +73,15 @@
                                         <input type="text" name="email" placeholder="Your email">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" name="subject" placeholder="Subject">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                        <button class="site-btn">send</button>
+                                            <input type="text" name="sujet" placeholder="Subject">
+                                            <textarea name="message" placeholder="Message"></textarea>
+                                        <button class="site-btn" type="submit" >send</button>
                                     </div>
                                 </div>
                             </form>
+
+
+
                         </div>
                     </div>
                 </div>

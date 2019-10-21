@@ -17,6 +17,7 @@ use App\Contact;
 use App\Article;
 use App\Tag;
 Use App\Category;
+use App\Commentaire;
 class BlogPostNavBarItemController extends Controller
 {
     public  function  index($id){
@@ -42,10 +43,30 @@ class BlogPostNavBarItemController extends Controller
         $article =  Article::find($id);
         $tags = Tag::all();
         $categories = Category::all();
-      
-        
-    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories'));
+
+        $commentaires = Commentaire::all();
+        $bonneid = Article::find($id);
+        $nbrcommentaire = Commentaire::where('article_id',$bonneid->id)->count();
+    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire'));
     }
 
+    public function store($id, Request $request){
+        $commentaire = new Commentaire();
+       
+        $commentaire->name = request('name');
+        $commentaire->imgPath = 'img/02.jpg';
+        $commentaire->sujet = request('sujet');
+        $commentaire->message = request('message');
+        $commentaire->email = request('email');
+        $bonneid = Article::find($id);
+        $commentaire->article_id = $bonneid->id;
+      
+       
+        $commentaire->save();
+      
+        return back();
+
+    }
+    
    
 }
