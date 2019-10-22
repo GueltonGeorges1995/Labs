@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Navbaritem;
 use App\Introitem;
@@ -12,6 +12,7 @@ use App\Testimonialitem;
 use App\Titre;
 use App\Team;
 use App\Contact;
+use App\Mail\ContactFormMail;
 class HomeviewController extends Controller
 {
     public  function  index(){
@@ -38,4 +39,21 @@ class HomeviewController extends Controller
         
     return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
     } 
+
+
+    public function store(Request $request){
+
+        $data = [
+            'name' => request('name'),
+            'email' => request('email'),
+            'sujet' => request('sujet'),
+            'message' => request('message')
+        ];
+        
+
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
+
+        return redirect('/');
+    }
 }
+

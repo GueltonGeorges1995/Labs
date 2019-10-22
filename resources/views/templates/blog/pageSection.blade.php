@@ -18,8 +18,10 @@
 							<div class="post-content">
 							<h2 class="post-title">{{$article->titre}}</h2>
 								<div class="post-meta">
-									<a href="">Loredana Papp</a>
-									<a href="">Design, Inspiration</a>
+									<a href="">{{$article->category[0]->name}}</a>
+									<a href="">@foreach ($article->tags()->get() as $tag)
+											{{$tag->name}}
+											@endforeach</a>
 									
 								<a href="">{{$article->commentaire->count()}} comments</a>
 								</div>

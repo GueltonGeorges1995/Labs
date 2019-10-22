@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\ServicesControllers;
 
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Navbaritem;
@@ -44,4 +47,19 @@ class ServicesNavBarItemController extends Controller
         
     return  view ('serviceView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','servicesgsm','servicegauches','servicedroites','projects'));
     } 
+
+    public function store(Request $request){
+
+        $data = [
+            'name' => request('name'),
+            'email' => request('email'),
+            'sujet' => request('sujet'),
+            'message' => request('message')
+        ];
+        
+
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
+
+        return redirect('/service');
+    }
 }

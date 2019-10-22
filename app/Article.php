@@ -26,4 +26,10 @@ class Article extends Model
     public function commentaire(){
         return $this->hasMany(commentaire::class,'article_id','id');
     }
+
+    public function category(){
+        return $this->hasMany(category::class,'id','category_id');
+    }
 }
+
+

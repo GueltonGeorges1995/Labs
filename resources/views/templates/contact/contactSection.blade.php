@@ -15,18 +15,20 @@
 					</div>
 					<!-- contact form -->
 					<div class="col-md-6 col-pull">
-						<form class="form-class" id="con_form">
+						<form class="form-class" id="con_form" action="/contact" method="POST">
+							@csrf
+							
 							<div class="row">
 								<div class="col-sm-6">
-									<input type="text" name="name" placeholder="Your name">
+								<input type="text" name="name" placeholder="Your name" value="{{old('name')}}">
 								</div>
 								<div class="col-sm-6">
-									<input type="text" name="email" placeholder="Your email">
+									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}">
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="subject" placeholder="Subject">
-									<textarea name="message" placeholder="Message"></textarea>
-									<button class="site-btn">send</button>
+									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}">
+									<textarea name="message" placeholder="Message" value="{{old('message')}}"></textarea>
+									<button class="site-btn" type="submit">send</button>
 								</div>
 							</div>
 						</form>

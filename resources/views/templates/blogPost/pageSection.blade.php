@@ -15,8 +15,18 @@
                     <div class="post-content">
                     <h2 class="post-title">{{$article->titre}}</h2>
                         <div class="post-meta">
-                            <a href="">Loredana Papp</a>
-                            <a href="">Design, Inspiration</a>
+                            <a href="">
+                                @foreach ($categories as $category)
+                                @if ($article->category_id === $category->id)
+                                    {{$category->name}}
+                                @endif
+                                
+                            @endforeach</a>
+                            <a href="">
+                                    @foreach ($article->tags()->get() as $tag)
+                                    {{$tag->name}}
+                                    @endforeach
+                            </a>
                             <a href="">{{$nbrcommentaire}} Comments</a>
                         </div>
                     <p>{{$article->text}}</p>

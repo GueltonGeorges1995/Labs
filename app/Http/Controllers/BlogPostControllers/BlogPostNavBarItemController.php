@@ -47,6 +47,7 @@ class BlogPostNavBarItemController extends Controller
         $commentaires = Commentaire::all();
         $bonneid = Article::find($id);
         $nbrcommentaire = Commentaire::where('article_id',$bonneid->id)->count();
+        
     return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire'));
     }
 

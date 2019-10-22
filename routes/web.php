@@ -133,11 +133,12 @@ Route::get('/home', function() {
 
 // Home Controller
 Route::get('/', 'HomeviewController@index'); // Basic View
-
+Route::post('/', 'HomeviewController@store');
 
 // Services Controller 
 Route::get('/service', 'ServicesviewController@index'); //Basic View
 Route::get('/service','ServicesControllers\ServicesNavBarItemController@index');
+Route::post('/service','ServicesControllers\ServicesNavBarItemController@store');
 
 // Blog Controller
 Route::get('/blog', 'BlogviewController@index');
@@ -147,6 +148,13 @@ Route::get('/blog-post/{id}','BlogControllers\BlogNavBarItemController@indexStor
 // Contact Controller
 Route::get('/contact', 'ContactviewController@index');
 Route::get('/contact','ContactControllers\ContactNavBarItemController@index');
+// Mail
+
+Route::post('/contact','ContactControllers\ContactNavBarItemController@store');
+
+
+
+
 // BlogPost Controller
 Route::get('/blog-post/{id}', 'BlogInfoviewController@index');
 
