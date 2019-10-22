@@ -107,7 +107,7 @@ Route::get('/admin/article/{id}/delete','AdminControllers\AdminArticleController
 Route::get('/admin/article/{id}/update','AdminControllers\AdminArticleController@indexStore')->middleware('auth');
 Route::patch('/admin/article/{id}/update','AdminControllers\AdminArticleController@store')->middleware('auth');
 
-
+Route::patch('/admin/article/{id}/validate','AdminControllers\AdminArticleController@validation')->middleware('auth');
 
 
 
@@ -140,6 +140,7 @@ Route::get('/service', 'ServicesviewController@index'); //Basic View
 Route::get('/service','ServicesControllers\ServicesNavBarItemController@index');
 Route::post('/service','ServicesControllers\ServicesNavBarItemController@store');
 
+Route::patch('/service/new','ServicesControllers\ServicesNavBarItemController@email');
 // Blog Controller
 Route::get('/blog', 'BlogviewController@index');
 Route::get('/blog','BlogControllers\BlogNavBarItemController@index');

@@ -57,4 +57,14 @@ class BlogNavBarItemController extends Controller
       
         return  view('blogPostView', compact('articles','tags','categories'));
     }
+
+
+    public function email(Request $request){
+        $newsletter = new Newsletter();
+       
+        $newsletter->email = request('newEmail');
+    
+        $newsletter->save();
+        return  redirect('/service');
+    }
 }

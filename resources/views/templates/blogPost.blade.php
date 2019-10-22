@@ -2,6 +2,6 @@
 
 @yield('blogPost.pageSection')
 
-@yield('blogPost.newsletter')
+@yield('service.newsletter')
 
 @yield('blogPost.footer')

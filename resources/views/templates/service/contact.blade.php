@@ -27,7 +27,7 @@
 								<div class="col-sm-12">
 									<input type="text" name="sujet" placeholder="Subject">
 									<textarea name="message" placeholder="Message"></textarea>
-									<button class="site-btn">send</button>
+									<button type="submit" class="site-btn">send</button>
 								</div>
 							</div>
 						</form>

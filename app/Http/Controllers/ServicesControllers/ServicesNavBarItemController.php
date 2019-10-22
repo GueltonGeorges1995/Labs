@@ -17,6 +17,7 @@ use App\Titre;
 use App\Team;
 use App\Contact;
 use App\Project;
+use App\Newsletter;
 class ServicesNavBarItemController extends Controller
 {
     public  function  index(){
@@ -61,5 +62,14 @@ class ServicesNavBarItemController extends Controller
         Mail::to('test@test.com')->send(new ContactFormMail($data));
 
         return redirect('/service');
+    }
+
+    public function email(Request $request){
+        $newsletter = new Newsletter();
+       
+        $newsletter->email = request('newEmail');
+    
+        $newsletter->save();
+        return back();
     }
 }

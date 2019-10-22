@@ -4,12 +4,14 @@ namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Article;
 use App\User;
 use App\Tag;
 use App\Category;
-
+use App\Newsletter;
 use Auth;
+use App\Mail\NewsletterMail;
 class AdminArticleController extends Controller
 {
     public  function  index(){
@@ -163,6 +165,21 @@ class AdminArticleController extends Controller
     }
 
 
+    public function validation(Request $request,$id){
+
+        $mails = Newsletter::all();
+        foreach ($mails as $mail) {
+           
+            Mail::to($mail->email)->send(new NewsletterMail());
+        }
+
+        $article =  Article::find($id);
+        $article->published = true;
+        $article->save();
+
+       
+        return back();
+    }
 
     
 }

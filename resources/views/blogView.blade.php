@@ -1,5 +1,6 @@
 @extends('templates.blog')
 
+
 @section('blog.header') 
     @include('templates.blog.header') 
 @endsection
@@ -9,8 +10,8 @@
 @endsection
 
 
-@section('blog.newsletter') 
-    @include('templates.blog.newsletter') 
+@section('service.newsletter') 
+    @include('templates.service.newsletter') 
 @endsection
 
 

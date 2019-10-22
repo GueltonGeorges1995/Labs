@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
-class NewlettersTableSeeder extends Seeder
+use App\Newsletter;
+class NewslettersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,8 @@ class NewlettersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Newsletter::create([
+            "email"=>"georges.guelton@gmail.com",
+        ]);
     }
 }

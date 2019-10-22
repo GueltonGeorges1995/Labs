@@ -52,7 +52,6 @@ class HomeviewController extends Controller
         
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));
-
         return redirect('/');
     }
 }

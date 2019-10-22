@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Newletter extends Model
+class Newsletter extends Model
 {
     //
 }

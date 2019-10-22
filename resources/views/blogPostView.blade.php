@@ -10,8 +10,8 @@
 @endsection
 
 
-@section('blogPost.newsletter') 
-    @include('templates.blogPost.newsletter') 
+@section('service.newsletter') 
+    @include('templates.service.newsletter') 
 @endsection
 	
 

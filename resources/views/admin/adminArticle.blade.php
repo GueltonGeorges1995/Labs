@@ -26,6 +26,7 @@
                   <th>user_id</th>
                   <th>category_id</th>
                   <th>tags</th>
+                  <th>validate</th>
                   <th>Delete</th>
                   <th>UPDATE</th>
                 </tr>
@@ -36,11 +37,19 @@
                         <td>{{$article->titre}}</td>
                         <td>{{$article->user_id}}</td>
                         <td>{{$article->category_id}}</td>
+
                         <td>@foreach ($article->tags()->get() as $tag)
                               
                             {{$tag->name}}
                             @endforeach
                             </td>
+                          <td><form action="/admin/article/{{$article->id}}/validate" method="POST">
+                            @csrf
+                            @METHOD('PATCH')
+                            <button type="submit" class="btn btn-primary">Validation</button>
+                          </form>
+                            
+                          </td>
                         <td><a href="/admin/article/{{$article->id}}/delete" class="btn btn-danger">Delete</a></td>
                         <td><a href="/admin/article/{{$article->id}}/update" class="btn btn-success">Update</a></td>
                     </tr>

@@ -7,9 +7,11 @@
 				</div>
 				<div class="col-md-9">
 					<!-- newsletter form -->
-					<form class="nl-form">
-						<input type="text" placeholder="Your e-mail here">
-						<button class="site-btn btn-2">Newsletter</button>
+					<form class="nl-form" action="/service/new" method="POST">
+						@csrf
+						@METHOD('PATCH')
+						<input type="text" placeholder="Your e-mail here" name="newEmail">
+						<button type="submit" class="site-btn btn-2">Newsletter</button>
 					</form>
 				</div>
 			</div>
