@@ -46,7 +46,12 @@
                           <td><form action="/admin/article/{{$article->id}}/validate" method="POST">
                             @csrf
                             @METHOD('PATCH')
-                            <button type="submit" class="btn btn-primary">Validation</button>
+                            @if ($article->published === 0)
+                              <button type="submit" class="btn btn-primary">Validation</button>
+                            @else
+                              <button type="submit" class="btn btn-primary" disabled>Validation</button>
+                            @endif
+                            
                           </form>
                             
                           </td>

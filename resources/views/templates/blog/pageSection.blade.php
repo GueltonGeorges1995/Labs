@@ -7,28 +7,30 @@
 				
 
 					@foreach ($articles as $article)
-					<div class="post-item">
-							<div class="post-thumbnail">
-							<img src="{{$article->imgPath}}" alt="">
-								<div class="post-date">
-									<h2>03</h2>
-									<h3>Nov 2017</h3>
-								</div>
+						@if ($article->published === 1)
+							<div class="post-item">
+									<div class="post-thumbnail">
+									<img src="{{$article->imgPath}}" alt="">
+										<div class="post-date">
+											<h2>03</h2>
+											<h3>Nov 2017</h3>
+										</div>
+									</div>
+									<div class="post-content">
+									<h2 class="post-title">{{$article->titre}}</h2>
+										<div class="post-meta">
+											<a href="">{{$article->category[0]->name}}</a>
+											<a href="">@foreach ($article->tags()->get() as $tag)
+													{{$tag->name}}
+													@endforeach</a>
+											
+										<a href="">{{$article->commentaire->count()}} comments</a>
+										</div>
+										<p>{{$article->text}}</p>
+										<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>
+									</div>
 							</div>
-							<div class="post-content">
-							<h2 class="post-title">{{$article->titre}}</h2>
-								<div class="post-meta">
-									<a href="">{{$article->category[0]->name}}</a>
-									<a href="">@foreach ($article->tags()->get() as $tag)
-											{{$tag->name}}
-											@endforeach</a>
-									
-								<a href="">{{$article->commentaire->count()}} comments</a>
-								</div>
-								<p>{{$article->text}}</p>
-								<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>
-							</div>
-						</div>
+						@endif
 					@endforeach
 
 					
@@ -48,6 +50,7 @@
 						{{-- <a class="active" href="">01.</a>
 						<a href="">02.</a>
 						<a href="">03.</a> --}}
+						
 						{{$articles->links()}}
 					</div>
 				</div>

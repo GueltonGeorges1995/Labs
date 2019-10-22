@@ -12,6 +12,7 @@ use App\Category;
 use App\Newsletter;
 use Auth;
 use App\Mail\NewsletterMail;
+use App\Mail\AdminValidation;
 class AdminArticleController extends Controller
 {
     public  function  index(){
@@ -22,6 +23,9 @@ class AdminArticleController extends Controller
         $a = Article::find(1);
         $t = Tag::find(1);
 
+       
+        
+        
         // $a->tags()->attach($t); // j'attache un article à un tag
         // $t->articles()->get(); // je vais chercher tout les tag lié à l'article function dans le model 
        
@@ -77,6 +81,16 @@ class AdminArticleController extends Controller
         $articleTags = Article::find($articles->id);
         // dd($articleTags->tags()->get());
 
+        $users = User::all();
+        foreach ($users as $user) {
+            if ($user->role === 'admin') {
+                $admins[] = $user;
+            }
+        }
+        
+        foreach ($admins as $admin) {
+            Mail::to($admin->email)->send(new AdminValidation());
+        }
 
         return redirect('/admin/article');
     }
@@ -126,24 +140,7 @@ class AdminArticleController extends Controller
         $articles->category_id = request('category');
 
         
-        // foreach ($tags as $tag ) {
-        //     if (request($tag->name) === "on") {
-        //         $articleTags = Article::find($articles->id);
-        //         // $articleTags->tags($tag);
-        //         // $articleTags->tags()->attach($tag);
-                
-        //         // dd($articleTags->tags($tag)->delete());
-        //     }
-        // }
-        
-        // foreach ($tags as $tag ) {
-        //     if (request($tag->name) === "on") {
-        //         $articleTags = Article::find($articles->id);
-             
-        //         $articleTags->tags()->detach($tag);
-                
-        //     }
-        // }
+       
 
         $articles->tags()->detach();
 
