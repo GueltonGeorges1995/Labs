@@ -130,7 +130,8 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 
-
+Route::get('/home','AdminControllers\AdminHomeController@index')->middleware('auth');
+Route::patch('/home/update','AdminControllers\AdminHomeController@store')->middleware('auth');
 
 // Home Controller
 Route::get('/', 'HomeviewController@index'); // Basic View

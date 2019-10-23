@@ -11,6 +11,31 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user=factory(App\User::class,1)->create();
+        User::create([
+            "name"=>"guest",
+            'role'=>'guest',
+            'email'=>'guest@guest.it',
+            'password'=>bcrypt('12345678'),
+            'imgPath'=>'img/02.jpg',
+            'text'=>'Voici ma biographie',
+        ]);
+
+        User::create([
+            "name"=>"editeur",
+            'role'=>'editeur',
+            'email'=>'editeur@editeur.it',
+            'password'=>bcrypt('12345678'),
+            'imgPath'=>'img/02.jpg',
+            'text'=>'Voici ma biographie',
+        ]);
+
+        User::create([
+            "name"=>"admin",
+            'role'=>'admin',
+            'email'=>'admin@admin.it',
+            'password'=>bcrypt('12345678'),
+            'imgPath'=>'img/02.jpg',
+            'text'=>'Voici ma biographie',
+        ]);
     }
 }
