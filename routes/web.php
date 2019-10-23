@@ -12,71 +12,71 @@
 */
 // Admin Controller
 // NavBar
-Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index');
-Route::patch('/admin/navbar','AdminControllers\AdminNavBarController@store');
+Route::get('/admin/navbar','AdminControllers\AdminNavBarController@index')->middleware(['admin','auth']);
+Route::patch('/admin/navbar','AdminControllers\AdminNavBarController@store')->middleware(['admin','auth']);
 
 // Intro section
-Route::get('/admin/intro','AdminControllers\AdminIntroController@index');
-Route::patch('/admin/intro','AdminControllers\AdminIntroController@store');
+Route::get('/admin/intro','AdminControllers\AdminIntroController@index')->middleware(['admin','auth']);
+Route::patch('/admin/intro','AdminControllers\AdminIntroController@store')->middleware(['admin','auth']);
 
 // Carousel section
-Route::get('/admin/carousel','AdminControllers\AdminCarouselController@index');
-Route::patch('/admin/carousel','AdminControllers\AdminCarouselController@store');
-Route::get('/admin/carousel/{id}/delete','AdminControllers\AdminCarouselController@delete');
+Route::get('/admin/carousel','AdminControllers\AdminCarouselController@index')->middleware(['admin','auth']);
+Route::patch('/admin/carousel','AdminControllers\AdminCarouselController@store')->middleware(['admin','auth']);
+Route::get('/admin/carousel/{id}/delete','AdminControllers\AdminCarouselController@delete')->middleware(['admin','auth']);
 
 
 // Service section
-Route::get('/admin/service','AdminControllers\AdminServiceController@index');
-Route::get('/admin/service/{id}/delete','AdminControllers\AdminServiceController@delete');
-Route::patch('/admin/service','AdminControllers\AdminServiceController@create');
+Route::get('/admin/service','AdminControllers\AdminServiceController@index')->middleware(['admin','auth']);
+Route::get('/admin/service/{id}/delete','AdminControllers\AdminServiceController@delete')->middleware(['admin','auth']);
+Route::patch('/admin/service','AdminControllers\AdminServiceController@create')->middleware(['admin','auth']);
 
-Route::get('/admin/service/{id}/update','AdminControllers\AdminServiceController@indexStore');
-Route::patch('/admin/service/{id}/update','AdminControllers\AdminServiceController@store');
+Route::get('/admin/service/{id}/update','AdminControllers\AdminServiceController@indexStore')->middleware(['admin','auth']);
+Route::patch('/admin/service/{id}/update','AdminControllers\AdminServiceController@store')->middleware(['admin','auth']);
 
 
 // About section
-Route::get('/admin/about','AdminControllers\AdminAboutController@index');
-Route::patch('/admin/about','AdminControllers\AdminAboutController@store');
+Route::get('/admin/about','AdminControllers\AdminAboutController@index')->middleware(['admin','auth']);
+Route::patch('/admin/about','AdminControllers\AdminAboutController@store')->middleware(['admin','auth']);
 
 
 // Testimonial section
-Route::get('/admin/testimonial','AdminControllers\AdminTestimonialController@index');
-Route::get('/admin/testimonial/{id}/delete','AdminControllers\AdminTestimonialController@delete');
-Route::patch('/admin/testimonial','AdminControllers\AdminTestimonialController@create');
+Route::get('/admin/testimonial','AdminControllers\AdminTestimonialController@index')->middleware(['admin','auth']);
+Route::get('/admin/testimonial/{id}/delete','AdminControllers\AdminTestimonialController@delete')->middleware(['admin','auth']);
+Route::patch('/admin/testimonial','AdminControllers\AdminTestimonialController@create')->middleware(['admin','auth']);
 
-Route::get('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@indexStore');
-Route::patch('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@store');
+Route::get('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@indexStore')->middleware(['admin','auth']);
+Route::patch('/admin/testimonial/{id}/update','AdminControllers\AdminTestimonialController@store')->middleware(['admin','auth']);
 
 // Titres section
-Route::get('/admin/titre','AdminControllers\AdminTitreController@index');
-Route::patch('/admin/titre','AdminControllers\AdminTitreController@store');
+Route::get('/admin/titre','AdminControllers\AdminTitreController@index')->middleware(['admin','auth']);
+Route::patch('/admin/titre','AdminControllers\AdminTitreController@store')->middleware(['admin','auth']);
 
 
 // team section
-Route::get('/admin/team','AdminControllers\AdminTeamController@index');
+Route::get('/admin/team','AdminControllers\AdminTeamController@index')->middleware(['admin','auth']);
 
-Route::patch('/admin/leader','AdminControllers\AdminTeamController@storeBoss');
-Route::patch('/admin/team','AdminControllers\AdminTeamController@create');
+Route::patch('/admin/leader','AdminControllers\AdminTeamController@storeBoss')->middleware(['admin','auth']);
+Route::patch('/admin/team','AdminControllers\AdminTeamController@create')->middleware(['admin','auth']);
 
-Route::get('/admin/team/{id}/delete','AdminControllers\AdminTeamController@delete');
+Route::get('/admin/team/{id}/delete','AdminControllers\AdminTeamController@delete')->middleware(['admin','auth']);
 
-Route::get('/admin/team/{id}/update','AdminControllers\AdminTeamController@indexStore');
-Route::patch('/admin/team/{id}/update','AdminControllers\AdminTeamController@store');
+Route::get('/admin/team/{id}/update','AdminControllers\AdminTeamController@indexStore')->middleware(['admin','auth']);
+Route::patch('/admin/team/{id}/update','AdminControllers\AdminTeamController@store')->middleware(['admin','auth']);
 
 
 // Contact section
-Route::get('/admin/contact','AdminControllers\AdminContactController@index');
-Route::patch('/admin/contact','AdminControllers\AdminContactController@store');
+Route::get('/admin/contact','AdminControllers\AdminContactController@index')->middleware(['admin','auth']);
+Route::patch('/admin/contact','AdminControllers\AdminContactController@store')->middleware(['admin','auth']);
 
 
 // Project section
-Route::get('/admin/project','AdminControllers\AdminProjectController@index');
-Route::patch('/admin/project','AdminControllers\AdminProjectController@create');
+Route::get('/admin/project','AdminControllers\AdminProjectController@index')->middleware(['admin','auth']);
+Route::patch('/admin/project','AdminControllers\AdminProjectController@create')->middleware(['admin','auth']);
 
-Route::get('/admin/project/{id}/delete','AdminControllers\AdminProjectController@delete');
+Route::get('/admin/project/{id}/delete','AdminControllers\AdminProjectController@delete')->middleware(['admin','auth']);
 
-Route::get('/admin/project/{id}/update','AdminControllers\AdminProjectController@indexStore');
-Route::patch('/admin/project/{id}/update','AdminControllers\AdminProjectController@store');
+Route::get('/admin/project/{id}/update','AdminControllers\AdminProjectController@indexStore')->middleware(['admin','auth']);
+Route::patch('/admin/project/{id}/update','AdminControllers\AdminProjectController@store')->middleware(['admin','auth']);
 
 
 
@@ -84,31 +84,32 @@ Route::patch('/admin/project/{id}/update','AdminControllers\AdminProjectControll
 // ---- Article section ----
 
 // Tag section
-Route::get('/admin/tag','AdminControllers\AdminTagController@index');
-Route::patch('/admin/tag','AdminControllers\AdminTagController@create');
+Route::get('/admin/tag','AdminControllers\AdminTagController@index')->middleware(['auth','test']);
+Route::patch('/admin/tag','AdminControllers\AdminTagController@create')->middleware(['auth','test']);
 
-Route::get('/admin/tag/{id}/delete','AdminControllers\AdminTagController@delete');
+Route::get('/admin/tag/{id}/delete','AdminControllers\AdminTagController@delete')->middleware(['auth','test']);
 
-Route::get('/admin/tag/{id}/update','AdminControllers\AdminTagController@indexStore');
-Route::patch('/admin/tag/{id}/update','AdminControllers\AdminTagController@store');
+Route::get('/admin/tag/{id}/update','AdminControllers\AdminTagController@indexStore')->middleware(['auth','test']);
+Route::patch('/admin/tag/{id}/update','AdminControllers\AdminTagController@store')->middleware(['auth','test']);
 
 // Category section
-Route::get('/admin/category','AdminControllers\AdminCategoryController@index');
-Route::patch('/admin/category','AdminControllers\AdminCategoryController@create');
-Route::get('/admin/category/{id}/delete','AdminControllers\AdminCategoryController@delete');
-Route::get('/admin/category/{id}/update','AdminControllers\AdminCategoryController@indexStore');
-Route::patch('/admin/category/{id}/update','AdminControllers\AdminCategoryController@store');
+Route::get('/admin/category','AdminControllers\AdminCategoryController@index')->middleware(['auth','test']);
+Route::patch('/admin/category','AdminControllers\AdminCategoryController@create')->middleware(['auth','test']);
+Route::get('/admin/category/{id}/delete','AdminControllers\AdminCategoryController@delete')->middleware(['auth','test']);
+Route::get('/admin/category/{id}/update','AdminControllers\AdminCategoryController@indexStore')->middleware(['auth','test']);
+Route::patch('/admin/category/{id}/update','AdminControllers\AdminCategoryController@store')->middleware(['auth','test']);
 
 // Article section
-Route::get('/admin/article','AdminControllers\AdminArticleController@index')->middleware('auth');
-Route::patch('/admin/article','AdminControllers\AdminArticleController@create')->middleware('auth');
-Route::get('/admin/article/{id}/delete','AdminControllers\AdminArticleController@delete');
+Route::get('/admin/article','AdminControllers\AdminArticleController@index')->middleware(['admin','auth','test']);
+Route::patch('/admin/article','AdminControllers\AdminArticleController@create')->middleware(['auth','test']);
+Route::get('/admin/article/{id}/delete','AdminControllers\AdminArticleController@delete')->middleware(['auth','test']);
 
-Route::get('/admin/article/{id}/update','AdminControllers\AdminArticleController@indexStore')->middleware('auth');
-Route::patch('/admin/article/{id}/update','AdminControllers\AdminArticleController@store')->middleware('auth');
+Route::get('/admin/article/{id}/update','AdminControllers\AdminArticleController@indexStore')->middleware(['auth','test']);
+Route::patch('/admin/article/{id}/update','AdminControllers\AdminArticleController@store')->middleware(['auth','test']);
 
-Route::patch('/admin/article/{id}/validate','AdminControllers\AdminArticleController@validation')->middleware('auth');
+Route::patch('/admin/article/{id}/validate','AdminControllers\AdminArticleController@validation')->middleware(['auth','test']);
 
+Route::get('/editeur/article','AdminControllers\AdminArticleController@editeur')->middleware(['auth','test']);
 
 
 

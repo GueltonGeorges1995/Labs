@@ -37,7 +37,7 @@ class BlogNavBarItemController extends Controller
         }
 
         $contacts = Contact::find(1);
-        $articles = Article::paginate(3);
+        $articles = Article::where('published', true)->paginate(3);
        
         $tags = Tag::all();
         $categories = Category::all();

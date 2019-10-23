@@ -129,79 +129,98 @@ return [
        
         
         
-        ['header' => 'Changement du contenu du header'],
+        
         [
             'text' => 'Barre de Navigation',
             'url'  => 'admin/navbar',
             'icon' => 'fas fa-fw fa-map',
+            'can' => 'admin'
         ],
         [
             'text' => 'Contenu Intro',
             'url'  => 'admin/intro',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
         [
             'text' => 'Images du Carousel',
             'url'  => 'admin/carousel',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Changement du contenu des services'],
+       
         [
             'text' => 'Services',
             'url'  => 'admin/service',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Changement du contenu de about'],
+        
         [
             'text' => 'About',
             'url'  => 'admin/about',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions des témoiniages'],
+        
         [
             'text' => 'Testimonials',
             'url'  => 'admin/testimonial',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions des titres'],
+        
         [
             'text' => 'Titres',
             'url'  => 'admin/titre',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions des team'],
+        
         [
             'text' => 'Team',
             'url'  => 'admin/team',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions de contacr'],
+       
         [
             'text' => 'Contact',
             'url'  => 'admin/contact',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions des projets'],
+        
         [
             'text' => 'Project',
             'url'  => 'admin/project',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
         ],
-        ['header' => 'Gestions des articles'],
+        
         [
             'text' => 'Tags',
             'url'  => 'admin/tag',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'guest'
         ],
         [
             'text' => 'Categories',
             'url'  => 'admin/category',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'guest'
         ],
         [
             'text' => 'Articles',
             'url'  => 'admin/article',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
+        ],
+        [
+            'text' => 'Articles - editeur',
+            'url'  => 'editeur/article',
+            'icon' => 'fas fa-fw fa-lock',
+            'can' => 'guest'
         ],
         
        

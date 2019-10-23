@@ -158,7 +158,7 @@ class AdminArticleController extends Controller
         
         $articles->save();
         
-        return redirect('/admin/article');
+        return back();
     }
 
 
@@ -178,5 +178,13 @@ class AdminArticleController extends Controller
         return back();
     }
 
-    
+    public function editeur(){
+        $user = Auth::user();
+        $articles =  Article::where('user_id',$user->id)->get();
+        $tags = Tag::all();
+        $categories = Category::all();
+        
+        
+       return view('/editeur/editeurArticle', compact('articles','tags','categories','user')); 
+    }
 }
