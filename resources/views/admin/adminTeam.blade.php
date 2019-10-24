@@ -15,6 +15,15 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
 <div class="row">
         <div class="col-xs-12">
           <div class="box">
@@ -58,12 +67,12 @@
         </div>
       </div>
 
-
-      <form role="form" method="POST" action="/admin/leader">
+<div class="box-primary box"> 
+      <form role="form" method="POST" action="/admin/leader" style="margin-bottom:30px;">
         @csrf
         @METHOD('PATCH')
-      <div class="box-body">
-            <div class="">
+      <div class="">
+            <div class="" style="padding:30px;">
                     <h4>Selectionner un nouveau chef</h4>
                       <select name="boss">
                           @foreach ($teams as $team)
@@ -72,11 +81,11 @@
                       </select>
                 </div>
         </div>
-      <div class="">
+      <div class="" style="padding:10px 30px;">
         <button type="submit" class="btn btn-primary">Ajouter</button>
       </div>
     </form>
-     
+  </div>
 
 
       <div class="box box-primary">
@@ -91,15 +100,15 @@
               <div class="box-body">
                 <div class="form-group">
                         <label for="exampleInputEmail1">Image : </label>
-                        <input type="file" class="form-control"  name="imgPath">
+                        <input type="file" class="form-control"  name="imgPath" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nom : </label>
-                    <input type="text" class="form-control"  name="name">
+                    <input type="text" class="form-control"  name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Function : </label>
-                    <input type="text" class="form-control"  name="function">
+                    <input type="text" class="form-control"  name="function" required>
                 </div>
             
 

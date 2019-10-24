@@ -15,6 +15,15 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
       <div class="box box-primary">
             <div class="box-header with-border">
             <h3 class="box-title">{{$services->titre}}</h3>
@@ -28,18 +37,18 @@
          
                     <div class="form-group">
                             <label for="exampleInputEmail1">Titre : </label>
-                            <input type="text" class="form-control"  name="serviceTitre">
+                            <input type="text" class="form-control"  name="serviceTitre" required>
                     </div>
             
                         <div class="form-group">
                             <label for="exampleInputEmail1">Text : </label>
-                            <input type="text" class="form-control"  name="serviceText">
+                            <input type="text" class="form-control"  name="serviceText" required>
                         </div>
             
                         <div class="form-group">
                             <label for="exampleInputEmail1">Logo : </label>
                             <select name="serviceLogo">
-                                    <option>--Veuillez choisir un logo--</option>
+                                   
                                     <option value="flaticon-001-picture">Image</option>
                                     <option value="flaticon-002-caliper">Compat</option>
                                     <option value="flaticon-003-energy-drink">Boisson energétique</option>

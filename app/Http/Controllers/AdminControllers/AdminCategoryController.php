@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use App\Http\Requests\CategoryRequest;
 class AdminCategoryController extends Controller
 {
     public function index(){
@@ -13,7 +14,7 @@ class AdminCategoryController extends Controller
         return  view ('/admin/adminCategory',compact('categories'));
     }
 
-    public function create(Request $request){
+    public function create(CategoryRequest $request){
         
         $categories= new Category();
        
@@ -39,7 +40,7 @@ class AdminCategoryController extends Controller
     }
 
 
-    public function store($id,Request $request){
+    public function store($id,CategoryRequest $request){
         
         $categories = Category::find($id);
        

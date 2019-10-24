@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Http\Requests\TagRequest;
 class AdminTagController extends Controller
 {
     public  function  index(){
@@ -14,7 +15,7 @@ class AdminTagController extends Controller
         return  view ('/admin/adminTag',compact('tags'));
     }
 
-    public function create(Request $request){
+    public function create(TagRequest $request){
         
         $tags = new Tag();
 
@@ -42,7 +43,7 @@ class AdminTagController extends Controller
     }
 
 
-    public function store($id,Request $request)
+    public function store($id,TagRequest $request)
     {
         $tags = Tag::find($id);
 

@@ -15,7 +15,15 @@
 @stop
 
 @section('content')
-
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
 
       <div class="box box-primary">
             <div class="box-header with-border">
@@ -29,15 +37,15 @@
               <div class="box-body">
                 <div class="form-group">
                         <label for="exampleInputEmail1">Image : </label>
-                        <input type="file" class="form-control"  name="imgPath">
+                        <input type="file" class="form-control"  name="imgPath" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nom : </label>
-                    <input type="text" class="form-control"  name="name">
+                    <input type="text" class="form-control"  name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Function : </label>
-                    <input type="text" class="form-control"  name="function">
+                    <input type="text" class="form-control"  name="function" required>
                 </div>
             
 

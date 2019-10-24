@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service;
+use App\Http\Requests\ServicesRequest;
 class AdminServiceController extends Controller
 {
     public  function  index(){
@@ -17,7 +18,7 @@ class AdminServiceController extends Controller
 	    return  redirect('/admin/service');
     }
 
-    public function create(Request $request){
+    public function create(ServicesRequest $request){
         
         $services = new Service();
        
@@ -42,7 +43,7 @@ class AdminServiceController extends Controller
         return  view('/admin/serviceUpdate', compact('services'));
     }
 
-    public function store($id,Request $request)
+    public function store($id,ServicesRequest $request)
     {
         $services = Service::find($id);
 

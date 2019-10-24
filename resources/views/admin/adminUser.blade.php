@@ -12,6 +12,19 @@
 @stop
 
 @section('content')
+
+
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
+
+
 <div class="row">
         <div class="col-xs-12">
           <div class="box">
@@ -69,33 +82,32 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Image : </label>
-                        <input type="file" name="imgPath" id="" class="form-control">
+                        <input type="file" name="imgPath" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nom : </label>
-                        <input type="text" name="name" id="" class="form-control">
+                        <input type="text" name="name" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Password : </label>
-                        <input type="text" name="password" id="" class="form-control">
+                        <input type="text" name="password" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email : </label>
-                        <input type="text" name="email" id="" class="form-control">
+                        <input type="text" name="email" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Description : </label>
-                        <textarea name="text" class="form-control"></textarea>
+                        <textarea name="text" class="form-control" required></textarea>
                     </div>
 
                     <div class="fomr-group" style="margin-bottom:30px;"> 
                         <label >Choisir un rôle</label>
                         <select name="role" id="pet-select">
-                            <option value="">--Please choose an option--</option>
                             <option value="guest">Guest</option>
                             <option value="editeur">Editeur</option>
                             <option value="admin">Admin</option>

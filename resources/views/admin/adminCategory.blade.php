@@ -12,6 +12,17 @@
 @stop
 
 @section('content')
+
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
+
 <div class="row">
         <div class="col-xs-12">
           <div class="box">
@@ -57,7 +68,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name : </label>
-                        <input type="text" name="name" id="" class="form-control">
+                        <input type="text" name="name" id="" class="form-control" required>
                     </div>
 
               <div class="box-footer">

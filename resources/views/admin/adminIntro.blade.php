@@ -7,6 +7,15 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Modification des liens de la barre de navigation</h3>
@@ -20,12 +29,12 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Text en dessous du Logo : </label>
-        <input type="text" class="form-control" value="{{$introitems->textIntro}}" name="textIntro">
+        <input type="text" class="form-control" value="{{$introitems->textIntro}}" name="textIntro" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Logo: </label>
-        <input type="file" class="form-control" value="{{$introitems->imgPathIntro}}" name="imgPathIntro">
+        <input type="file" class="form-control" value="{{$introitems->imgPathIntro}}" name="imgPathIntro" required>
       </div>
       
       

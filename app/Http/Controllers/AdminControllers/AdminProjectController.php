@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Project;
+use App\Http\Requests\ProjectRequest;
 class AdminProjectController extends Controller
 {
     public  function  index(){
@@ -13,7 +14,7 @@ class AdminProjectController extends Controller
     }
 
 
-    public function create(Request $request){
+    public function create(ProjectRequest $request){
         
         $projects = new Project();
 
@@ -50,7 +51,7 @@ class AdminProjectController extends Controller
     }
 
 
-    public function store($id,Request $request)
+    public function store($id,ProjectRequest $request)
     {
         $projects = Project::find($id);
 

@@ -13,6 +13,17 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
+
+  @if ($errors->any())
+  <div class="alert alert-danger alert-dismissible">
+    @foreach ($errors->all() as $error)
+      <li>
+        {{$error}}
+      </li>
+    @endforeach
+  </div>
+  @endif
+
   <form role="form" method="POST" action="/admin/navbar" enctype="multipart/form-data">
     @csrf
     @METHOD('PATCH')
@@ -20,22 +31,22 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Page d'accueil : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->homePage}}" name="homePage">
+        <input type="text" class="form-control" value="{{$navbaritems->homePage}}" name="homePage" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Page de services : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->servicesPage}}" name="servicesPage">
+        <input type="text" class="form-control" value="{{$navbaritems->servicesPage}}" name="servicesPage" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Page de blog : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->blogPage}}" name="blogPage">
+        <input type="text" class="form-control" value="{{$navbaritems->blogPage}}" name="blogPage" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Page de contact : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->contactPage}}" name="contactPage">
+        <input type="text" class="form-control" value="{{$navbaritems->contactPage}}" name="contactPage" required>
       </div>
 
       <div class="form-group">
@@ -43,10 +54,6 @@
           <input type="file" class="form-control" value="{{$navbaritems->logoPath}}" name="logoPath">
         </div>
 
-      {{-- <div class="form-group">
-        <label for="exampleInputEmail1">Page des posts : </label>
-        <input type="text" class="form-control" value="{{$navbaritems->homePage}}">
-      </div> --}}
      
       
       

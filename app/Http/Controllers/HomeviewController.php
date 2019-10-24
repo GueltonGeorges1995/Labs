@@ -13,6 +13,7 @@ use App\Titre;
 use App\Team;
 use App\Contact;
 use App\Mail\ContactFormMail;
+use App\Http\Requests\ConcactFormRequest;
 class HomeviewController extends Controller
 {
     public  function  index(){
@@ -41,7 +42,7 @@ class HomeviewController extends Controller
     } 
 
 
-    public function store(Request $request){
+    public function store(ConcactFormRequest $request){
 
         $data = [
             'name' => request('name'),

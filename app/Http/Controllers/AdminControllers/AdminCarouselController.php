@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Carouselitem;
+use App\Http\Requests\CarouselRequest;
 class AdminCarouselController extends Controller
 {
     public  function  index(){
@@ -19,7 +20,7 @@ class AdminCarouselController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(CarouselRequest $request){
         
         $carouselitems = new Carouselitem();
        

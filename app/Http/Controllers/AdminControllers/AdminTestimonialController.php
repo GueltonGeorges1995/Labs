@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Testimonialitem;
+use App\Http\Requests\TestimonialRequest;
+
 class AdminTestimonialController extends Controller
 {
     public  function  index(){
@@ -18,7 +20,7 @@ class AdminTestimonialController extends Controller
     }
 
 
-    public function create(Request $request){
+    public function create(TestimonialRequest $request){
         
         $testimonialitems = new Testimonialitem();
        
@@ -47,7 +49,7 @@ class AdminTestimonialController extends Controller
     }
 
 
-    public function store($id,Request $request)
+    public function store($id,TestimonialRequest $request)
     {
         $testimonialitems = Testimonialitem::find($id);
 

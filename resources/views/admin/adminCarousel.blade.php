@@ -7,6 +7,16 @@
 @stop
 
 @section('content')
+
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Modification des images du carousel</h3>
@@ -57,7 +67,7 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Ajouter une image: </label>
-        <input type="file" class="form-control" value="{{$carouselitem->imgPath}}" name="imgPath">
+        <input type="file" class="form-control" value="{{$carouselitem->imgPath}}" name="imgPath" required>
       </div>
       
       

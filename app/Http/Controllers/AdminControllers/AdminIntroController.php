@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Introitem;
+use App\Http\Requests\IntroRequest;
 class AdminIntroController extends Controller
 {
     public  function  index(){
@@ -13,7 +14,7 @@ class AdminIntroController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(IntroRequest $request){
         $introitems =  Introitem::find(1);
         $introitems->textIntro = request('textIntro');
        

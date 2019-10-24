@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Contact;
+use App\Http\Requests\ContactRequest;
 
 class AdminContactController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminContactController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(ContactRequest $request){
         $contacts =  Contact::find(1);
 
         $contacts->titre = request('titre');

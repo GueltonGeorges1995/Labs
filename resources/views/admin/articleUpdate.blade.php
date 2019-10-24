@@ -12,6 +12,18 @@
 @stop
 
 @section('content')
+
+
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
+
       <div class="box box-primary">
             <div class="box-header with-border">
             <h3 class="box-title">Modification de l'article {{$articles->id}}</h3>
@@ -25,23 +37,22 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Image : </label>
-                        <input type="file" name="imgPath" id="" class="form-control" value="{{$articles->imgPath}}">
+                        <input type="file" name="imgPath" id="" class="form-control" value="{{$articles->imgPath}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Titre : </label>
-                        <input type="titre" name="titre" id="" class="form-control" value="{{$articles->titre}}">
+                        <input type="titre" name="titre" id="" class="form-control" value="{{$articles->titre}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Text : </label>
-                        <textarea name="text" id="" class="form-control">{{$articles->text}}</textarea>
+                        <textarea name="text" id="" class="form-control" required>{{$articles->text}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Categorie : </label>
                         <select name="category" id="pet-select">
-                            <option value="">--Please choose an option--</option>
                             
                             @foreach ($categories as $category)
                               <option value="{{$category->id}}">{{$category->name}}</option>

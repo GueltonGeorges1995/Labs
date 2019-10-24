@@ -5,7 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Aboutitem;
-
+use App\Http\Requests\AboutRequest;
 class AdminAboutController extends Controller
 {
     public  function  index(){
@@ -14,7 +14,7 @@ class AdminAboutController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(AboutRequest $request){
         $aboutitems =  Aboutitem::find(1);
 
         $aboutitems->titre = request('titre');

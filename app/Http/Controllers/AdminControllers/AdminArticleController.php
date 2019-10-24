@@ -13,6 +13,7 @@ use App\Newsletter;
 use Auth;
 use App\Mail\NewsletterMail;
 use App\Mail\AdminValidation;
+use App\Http\Requests\ArticleRequest;
 class AdminArticleController extends Controller
 {
     public  function  index(){
@@ -46,7 +47,7 @@ class AdminArticleController extends Controller
 
 
 
-    public function create(Request $request){
+    public function create(ArticleRequest $request){
         $tags = Tag::all();
         $articles = new Article();
         
@@ -92,7 +93,7 @@ class AdminArticleController extends Controller
             Mail::to($admin->email)->send(new AdminValidation());
         }
 
-        return redirect('/admin/article');
+        return back();
     }
 
     public function indexStore($id){
@@ -110,7 +111,7 @@ class AdminArticleController extends Controller
 
 
 
-    public function store($id,Request $request){
+    public function store($id,ArticleRequest $request){
         $tags = Tag::all();
         $articles = Article::find($id);
         

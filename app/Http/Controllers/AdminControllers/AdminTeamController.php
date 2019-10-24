@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Team;
+use App\Http\Requests\TeamRequest;
 class AdminTeamController extends Controller
 {
     public  function  index(){
@@ -32,7 +33,7 @@ class AdminTeamController extends Controller
         return redirect('/admin/team');
     }
 
-    public function create(Request $request){
+    public function create(TeamRequest $request){
         
         $teams = new Team();
 
@@ -68,7 +69,7 @@ class AdminTeamController extends Controller
     }
 
 
-    public function store($id,Request $request)
+    public function store($id,TeamRequest $request)
     {
         $teams = Team::find($id);
 

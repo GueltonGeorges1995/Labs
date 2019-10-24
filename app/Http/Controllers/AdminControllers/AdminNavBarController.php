@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Navbaritem;
+use App\Http\Requests\NavBarRequest;
 class AdminNavBarController extends Controller
 {
     public  function  index(){
@@ -13,7 +14,7 @@ class AdminNavBarController extends Controller
 
     }
     
-    public function store(Request $request){
+    public function store(NavBarRequest $request){
         $navbaritems =  Navbaritem::find(1);
 
         $navbaritems->homePage = request('homePage');

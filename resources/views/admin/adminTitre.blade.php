@@ -7,6 +7,17 @@
 @stop
 
 @section('content')
+
+@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+@foreach ($errors->all() as $error)
+<li>
+{{$error}}
+</li>
+@endforeach
+</div>
+@endif
+
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Modification des titres</h3>
@@ -20,22 +31,22 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Titre testimonial: </label>
-        <input type="text" class="form-control" value="{{$titres->testimonialTitre}}" name="testimonialTitre">
+        <input type="text" class="form-control" value="{{$titres->testimonialTitre}}" name="testimonialTitre" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Titre service: </label>
-        <input type="text" class="form-control" value="{{$titres->serviceTitre}}" name="serviceTitre">
+        <input type="text" class="form-control" value="{{$titres->serviceTitre}}" name="serviceTitre" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Titre team: </label>
-        <input type="text" class="form-control" value="{{$titres->teamTitre}}" name="teamTitre">
+        <input type="text" class="form-control" value="{{$titres->teamTitre}}" name="teamTitre" required>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Titre phone: </label>
-        <input type="text" class="form-control" value="{{$titres->phoneTitre}}" name="phoneTitre">
+        <input type="text" class="form-control" value="{{$titres->phoneTitre}}" name="phoneTitre" required>
       </div>
 
      

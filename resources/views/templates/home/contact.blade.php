@@ -1,6 +1,15 @@
 	<!-- Contact section -->
 	<div class="contact-section spad fix">
 		<div class="container">
+				@if ($errors->any())
+				<div  class="alert alert-danger alert-dismissible">
+				@foreach ($errors->all() as $error)
+				<li>
+				{{$error}}
+				</li>
+				@endforeach
+				</div>
+				@endif
 			<div class="row">
 				<!-- contact info -->
 				<div class="col-md-5 offset-md-1 contact-info col-push">
@@ -19,14 +28,14 @@
 						@csrf
 						<div class="row">
 							<div class="col-sm-6">
-								<input type="text" name="name" placeholder="Your name">
+								<input type="text" name="name" placeholder="Your name" required>
 							</div>
 							<div class="col-sm-6">
-								<input type="text" name="email" placeholder="Your email">
+								<input type="text" name="email" placeholder="Your email" required>
 							</div>
 							<div class="col-sm-12">
-								<input type="text" name="sujet" placeholder="Subject">
-								<textarea name="message" placeholder="Message"></textarea>
+								<input type="text" name="sujet" placeholder="Subject" required>
+								<textarea name="message" placeholder="Message" required></textarea>
 								<button class="site-btn">send</button>
 							</div>
 						</div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\Http\Requests\userRequest;
 
 class AdminUserController extends Controller
 {
@@ -17,7 +18,7 @@ class AdminUserController extends Controller
     }
 
 
-    public function create(Request $request){
+    public function create(userRequest $request){
         
         $user = new User();
 
@@ -53,7 +54,7 @@ class AdminUserController extends Controller
     }
 
 
-    public function store($id,Request $request)
+    public function store($id,userRequest $request)
     {
         $user = User::find($id);
 
