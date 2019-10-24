@@ -222,6 +222,12 @@ return [
             'icon' => 'fas fa-fw fa-lock',
             'can' => 'guest'
         ],
+        [
+            'text' => 'User',
+            'url'  => '/admin/user',
+            'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin'
+        ],
         
        
        

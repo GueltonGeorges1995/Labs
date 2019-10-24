@@ -116,7 +116,7 @@ class AdminArticleController extends Controller
         
         $articles->user_id = Auth::id();
         
-        $articles->published = false;
+        $articles->published = 0;
 
         if($request->hasFile('imgPath')){
             $file = $request->file('imgPath');
@@ -136,7 +136,7 @@ class AdminArticleController extends Controller
         $articles->imgPath = $img;
         $articles->titre = request('titre');
         $articles->text = request('text');
-        
+       
         $articles->category_id = request('category');
 
         

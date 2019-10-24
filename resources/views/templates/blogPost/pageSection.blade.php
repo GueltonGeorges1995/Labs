@@ -34,11 +34,11 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="img/avatar/03.jpg" alt="">
+                        <img src="/{{$user->imgPath}}" alt="" style="width:100px;">
                         </div>
                         <div class="author-info">
-                            <h2>Lore Williams, <span>Author</span></h2>
-                            <p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
+                        <h2>{{$user->name}} <span>{{$user->role}}</span></h2>
+                            <p>{{$user->text}} </p>
                         </div>
                     </div>
                     <!-- Post Comments -->
@@ -160,7 +160,7 @@
                 <div class="widget-item">
                     <h2 class="widget-title">Add</h2>
                     <div class="add">
-                        <a href=""><img src="img/add.jpg" alt=""></a>
+                        <a href=""><img src="/img/add.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

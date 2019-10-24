@@ -21,6 +21,7 @@ class AdminHomeController extends Controller
 
         $user->email = request('email');
         $user->password = bcrypt(request('password'));
+        // $user->password = request('password');
         $user->text = request('text');
 
         if($request->hasFile('imgPath')){

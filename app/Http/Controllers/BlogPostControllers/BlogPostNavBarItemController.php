@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BlogPostControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Navbaritem;
 use App\Introitem;
 use App\Carouselitem;
@@ -18,6 +18,7 @@ use App\Article;
 use App\Tag;
 Use App\Category;
 use App\Commentaire;
+use Auth;
 class BlogPostNavBarItemController extends Controller
 {
     public  function  index($id){
@@ -47,8 +48,11 @@ class BlogPostNavBarItemController extends Controller
         $commentaires = Commentaire::all();
         $bonneid = Article::find($id);
         $nbrcommentaire = Commentaire::where('article_id',$bonneid->id)->count();
+
+
+        $user= Auth::user();
         
-    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire'));
+    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire','user'));
     }
 
     public function store($id, Request $request){

@@ -114,13 +114,12 @@ Route::get('/editeur/article','AdminControllers\AdminArticleController@editeur')
 
 
 
-
-
-
-
-
-
-
+// User section
+Route::get('/admin/user','AdminControllers\AdminUserController@index')->middleware(['admin','auth']);
+Route::patch('/admin/user','AdminControllers\AdminUserController@create')->middleware(['admin','auth']);
+Route::get('/admin/user/{id}/delete','AdminControllers\AdminUserController@delete')->middleware(['admin','auth']);
+Route::get('/admin/user/{id}/update','AdminControllers\AdminUserController@indexStore')->middleware(['auth','admin']);
+Route::patch('/admin/user/{id}/update','AdminControllers\AdminUserController@store')->middleware(['auth','admin']);
 
 
 Auth::routes();
