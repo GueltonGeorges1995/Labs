@@ -34,11 +34,11 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                        <img src="/{{$user->imgPath}}" alt="" style="width:100px;">
+                        <img src="/{{$author[0]->imgPath}}" alt="" style="width:100px;">
                         </div>
                         <div class="author-info">
-                        <h2>{{$user->name}} <span>{{$user->role}}</span></h2>
-                            <p>{{$user->text}} </p>
+                        <h2>{{$author[0]->name}} <span>{{$author[0]->role}}</span></h2>
+                            <p>{{$author[0]->text}} </p>
                         </div>
                     </div>
                     <!-- Post Comments -->

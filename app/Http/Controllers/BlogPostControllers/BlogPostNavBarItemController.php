@@ -48,11 +48,14 @@ class BlogPostNavBarItemController extends Controller
         $commentaires = Commentaire::all();
         $bonneid = Article::find($id);
         $nbrcommentaire = Commentaire::where('article_id',$bonneid->id)->count();
-
-
-        $user= Auth::user();
         
-    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire','user'));
+        $user = User::all();
+
+        $author = User::where('id',$article->user_id)->get();
+
+        // dd($author);
+        
+    return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire','user','author'));
     }
 
     public function store($id, Request $request){
