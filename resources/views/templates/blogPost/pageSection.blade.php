@@ -8,8 +8,8 @@
                     <div class="post-thumbnail">
                     <img src="/{{$article->imgPath}}" alt="">
                         <div class="post-date">
-                            <h2>03</h2>
-                            <h3>Nov 2017</h3>
+                            	<h2>{{$article->created_at->day}}</h2>
+									<h3>{{$article->created_at->shortEnglishMonth}} {{$article->created_at->year}}</h3>
                         </div>
                     </div>
                     <div class="post-content">
@@ -59,6 +59,7 @@
                                         </div>
                                         <div class="commetn-text">
                                             <h3>{{$commentaire->sujet}}</h3>
+                                            
                                             <p>{{$commentaire->message}}</p>
                                         </div>
                                     </li>

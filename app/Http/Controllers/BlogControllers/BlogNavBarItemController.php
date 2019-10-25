@@ -46,8 +46,10 @@ class BlogNavBarItemController extends Controller
         $commentaires = Commentaire::all();
         $countSearch = true;
        
+        $date = date('d-F-Y');
+        // dd($date);
 
-    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories','commentaires','countSearch'));
+    return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories','commentaires','countSearch','date'));
     }
 
     public function indexStore($id){
