@@ -17,6 +17,7 @@ use App\Article;
 use App\Tag;
 Use App\Category;
 use App\Commentaire;
+use App\Http\Requests\NewsletterFormRequest;
 class BlogNavBarItemController extends Controller
 {
     public  function  index(){
@@ -59,7 +60,7 @@ class BlogNavBarItemController extends Controller
     }
 
 
-    public function email(Request $request){
+    public function email(NewsletterFormRequest $request){
         $newsletter = new Newsletter();
        
         $newsletter->email = request('newEmail');

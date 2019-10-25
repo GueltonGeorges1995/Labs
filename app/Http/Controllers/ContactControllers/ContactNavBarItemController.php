@@ -15,6 +15,7 @@ use App\Titre;
 use App\Team;
 use App\Contact;
 use App\Mail\ContactFormMail;
+use App\Http\Requests\ConcactFormRequest;
 class ContactNavBarItemController extends Controller
 {
     public  function  index(){
@@ -43,7 +44,7 @@ class ContactNavBarItemController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(ConcactFormRequest $request){
 
         $data = [
             'name' => request('name'),
@@ -55,6 +56,6 @@ class ContactNavBarItemController extends Controller
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));
 
-        return redirect('/contact');
+        return redirect('/contact'.'#something2');
     }
 }

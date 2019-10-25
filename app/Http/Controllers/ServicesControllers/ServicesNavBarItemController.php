@@ -18,6 +18,8 @@ use App\Team;
 use App\Contact;
 use App\Project;
 use App\Newsletter;
+use App\Http\Requests\ConcactFormRequest;
+use App\Http\Requests\NewsletterFormRequest;
 class ServicesNavBarItemController extends Controller
 {
     public  function  index(){
@@ -49,7 +51,7 @@ class ServicesNavBarItemController extends Controller
     return  view ('serviceView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','servicesgsm','servicegauches','servicedroites','projects'));
     } 
 
-    public function store(Request $request){
+    public function store(ConcactFormRequest $request){
 
         $data = [
             'name' => request('name'),
@@ -61,15 +63,16 @@ class ServicesNavBarItemController extends Controller
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));
 
-        return redirect('/service');
+        return redirect('/service' . '#something3');
     }
 
-    public function email(Request $request){
+    public function email(NewsletterFormRequest $request){
         $newsletter = new Newsletter();
        
         $newsletter->email = request('newEmail');
     
         $newsletter->save();
-        return back();
+        // return back();
+        return redirect('/service' . '#yo');
     }
 }

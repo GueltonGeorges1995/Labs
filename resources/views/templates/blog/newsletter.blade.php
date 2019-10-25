@@ -15,4 +15,12 @@
 			</div>
 		</div>
 	</div>
-	<!-- newsletter section end-->
+	<!-- newsletter section end-->@if ($errors->any())
+<div  class="alert alert-danger alert-dismissible">
+		@foreach ($errors->all() as $error)
+		<li>
+		{{$error}}
+		</li>
+		@endforeach
+		</div>
+		@endif

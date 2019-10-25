@@ -1,6 +1,15 @@
 	<!-- Contact section -->
 	<div class="contact-section spad fix">
-			<div class="container">
+			<div class="container" id="something2">
+					@if ($errors->any())
+					<div  class="alert alert-danger alert-dismissible">
+					@foreach ($errors->all() as $error)
+					<li>
+					{{$error}}
+					</li>
+					@endforeach
+					</div>
+					@endif
 				<div class="row">
 					<!-- contact info -->
 					<div class="col-md-5 offset-md-1 contact-info col-push">
@@ -15,19 +24,19 @@
 					</div>
 					<!-- contact form -->
 					<div class="col-md-6 col-pull">
-						<form class="form-class" id="con_form" action="/contact" method="POST">
+						<form class="form-class" id="con_form" action="/contact#something2" method="POST">
 							@csrf
 							
 							<div class="row">
 								<div class="col-sm-6">
-								<input type="text" name="name" placeholder="Your name" value="{{old('name')}}">
+								<input type="text" name="name" placeholder="Your name" value="{{old('name')}}" required>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}">
+									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}" required>
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}">
-									<textarea name="message" placeholder="Message" value="{{old('message')}}"></textarea>
+									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}" required>
+									<textarea name="message" placeholder="Message"  required>{{old('message')}}</textarea>
 									<button class="site-btn" type="submit">send</button>
 								</div>
 							</div>
