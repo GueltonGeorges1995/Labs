@@ -45,7 +45,19 @@ class ServicesNavBarItemController extends Controller
        $servicegauches = $servicesgsm->take(3);
        $servicedroites = $servicesgsm->take(-3);
        
-        $projects = Project::all()->random(3);
+       
+       if (Project::all()->count() >= 3) {
+           $projects= Project::all() ->random(3);
+       } else {
+           if ( Project::all()->count() >= 2) {
+            $projects= Project::all() ->random(2);
+           } else {
+            $projects= Project::all() ->random(1);
+           }
+           
+       }
+       
+        // $projects = Project::all()->random(3);
         // dd($projects);
         
     return  view ('serviceView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','servicesgsm','servicegauches','servicedroites','projects'));

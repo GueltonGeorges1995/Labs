@@ -27,7 +27,7 @@ class AboutRequest extends FormRequest
             'titre' => 'required',
             'textGauche' => 'required',
             'textDroite' => 'required',
-            'imgPath' => 'required',
+            'imgPath' => 'required|image',
             'videoPath' => 'required',
         ];
     }

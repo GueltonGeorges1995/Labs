@@ -28,7 +28,7 @@ class NavBarRequest extends FormRequest
             'servicesPage' => 'required',
             'blogPage' => 'required',
             'contactPage' => 'required',
-            'logoPath' => 'required',
+            'logoPath' => 'required|image',
         ];
     }
 }

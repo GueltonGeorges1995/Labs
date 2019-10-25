@@ -24,7 +24,7 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'imgPath' => 'required',
+            'imgPath' => 'required|image',
             'titre' => 'required',
             'text' => 'required',
         ];

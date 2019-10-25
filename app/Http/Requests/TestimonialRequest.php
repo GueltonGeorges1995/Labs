@@ -27,7 +27,7 @@ class TestimonialRequest extends FormRequest
             'text' => 'required',
             'titre' => 'required',
             'sousTitre' => 'required',
-            'imgPath' => 'required',
+            'imgPath' => 'required|image',
         ];
     }
 }

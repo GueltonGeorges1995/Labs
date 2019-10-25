@@ -25,7 +25,7 @@ class IntroRequest extends FormRequest
     {
         return [
             'textIntro' => 'required',
-            'imgPathIntro' => 'required',
+            'imgPathIntro' => 'required|image',
         ];
     }
 }
