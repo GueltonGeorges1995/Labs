@@ -146,6 +146,7 @@ Route::patch('/service/new','ServicesControllers\ServicesNavBarItemController@em
 Route::get('/blog', 'BlogviewController@index');
 Route::get('/blog','BlogControllers\BlogNavBarItemController@index');
 Route::get('/blog-post/{id}','BlogControllers\BlogNavBarItemController@indexStore');
+Route::get('/search','BlogControllers\BlogNavBarItemController@search');
 
 // Contact Controller
 Route::get('/contact', 'ContactviewController@index');

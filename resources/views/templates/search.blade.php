@@ -1,6 +1,6 @@
 @yield('blog.header')
 
-@yield('blog.pageSection')
+@yield('blog.search')
 
 {{-- @yield('blog.newsletter') --}}
 @yield('service.newsletter')

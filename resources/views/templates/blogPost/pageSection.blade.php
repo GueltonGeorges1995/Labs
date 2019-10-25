@@ -100,8 +100,9 @@
             <div class="col-md-4 col-sm-5 sidebar">
                 <!-- Single widget -->
                 <div class="widget-item">
-                    <form action="#" class="search-form">
-                        <input type="text" placeholder="Search">
+                    <form action="/search" class="search-form">
+                        @csrf
+                        <input type="text" placeholder="Search" name="searchItems" required>
                         <button class="search-btn"><i class="flaticon-026-search"></i></button>
                     </form>
                 </div>

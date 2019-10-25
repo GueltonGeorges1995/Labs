@@ -5,43 +5,35 @@
 				<div class="col-md-8 col-sm-7 blog-posts">
 					<!-- Post item -->
 				
-
-					@foreach ($articles as $article)
-						@if ($article->published === 1)
-							<div class="post-item">
-									<div class="post-thumbnail">
-									<img src="{{$article->imgPath}}" alt="">
-										<div class="post-date">
-											<h2>03</h2>
-											<h3>Nov 2017</h3>
-										</div>
-									</div>
-									<div class="post-content">
-									<h2 class="post-title">{{$article->titre}}</h2>
-										<div class="post-meta">
-											<a href="">{{$article->category[0]->name}}</a>
-											<a href="">@foreach ($article->tags()->get() as $tag)
-													{{$tag->name}}
-													@endforeach</a>
-											
-										<a href="">{{$article->commentaire->count()}} comments</a>
-										</div>
-										<p>{{$article->text}}</p>
-										<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>
-									</div>
-							</div>
-						@endif
-					@endforeach
-
 					
-
-
-
-
-
-
-
-
+					@foreach ($articles as $article)
+					@if ($article->published === 1)
+						<div class="post-item">
+								<div class="post-thumbnail">
+								<img src="{{$article->imgPath}}" alt="">
+									<div class="post-date">
+										<h2>03</h2>
+										<h3>Nov 2017</h3>
+									</div>
+								</div>
+								<div class="post-content">
+								<h2 class="post-title">{{$article->titre}}</h2>
+									<div class="post-meta">
+										<a href="">{{$article->category[0]->name}}</a>
+										<a href="">@foreach ($article->tags()->get() as $tag)
+												{{$tag->name}}
+												@endforeach</a>
+										
+									<a href="">{{$article->commentaire->count()}} comments</a>
+									</div>
+									<p>{{$article->text}}</p>
+									<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>
+								</div>
+						</div>
+					@endif
+					@endforeach
+					
+						
 
 			
 					
@@ -52,14 +44,17 @@
 						<a href="">03.</a> --}}
 						
 						{{$articles->links()}}
+					
+						
 					</div>
 				</div>
 				<!-- Sidebar area -->
 				<div class="col-md-4 col-sm-5 sidebar">
 					<!-- Single widget -->
 					<div class="widget-item">
-						<form action="#" class="search-form">
-							<input type="text" placeholder="Search">
+						<form action="/search" class="search-form">
+							@csrf
+							<input type="text" placeholder="Search" name="searchItems" required>
 							<button class="search-btn"><i class="flaticon-026-search"></i></button>
 						</form>
 					</div>
