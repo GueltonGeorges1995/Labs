@@ -60,6 +60,7 @@ class BlogPostNavBarItemController extends Controller
     }
 
     public function store($id, CommentaireFormRequest $request){
+        $article =  Article::find($id);
         $commentaire = new Commentaire();
        
         $commentaire->name = request('name');
@@ -69,11 +70,11 @@ class BlogPostNavBarItemController extends Controller
         $commentaire->email = request('email');
         $bonneid = Article::find($id);
         $commentaire->article_id = $bonneid->id;
-      
+      $idcom = $article->id;
        
         $commentaire->save();
       
-        return redirect('/blog-post/boneid' . '#yas');
+        return back();
 
     }
     
