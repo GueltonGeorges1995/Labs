@@ -48,7 +48,7 @@
                         <td>{{$team->function}}</td>
                         <td>{{$team->boss}}</td>
                         <td>
-                          @if ($countBoss>3)
+                          @if ($team->boss === 0)
                             <a href="/admin/team/{{$team->id}}/delete" class="btn btn-danger">Delete</a>
                           @else
                             <a href="/admin/team/{{$team->id}}/delete" class="btn btn-danger disabled" disabled>Delete</a>

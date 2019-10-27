@@ -27,6 +27,29 @@ class HomeviewController extends Controller
         $titres = Titre::find(1);
         
         $teamboss = Team::where("boss",true)->get();
+        $test = Team::all()->count();
+        if ($test<3) {
+            $teams = new Team();
+
+           $teams->imgPath = '/img/team/1.jpg';
+           
+            $teams->name = 'Jhon doe';
+            $teams->function = 'exemple';
+            $teams->boss = false;
+    
+            $teams->save();
+        }
+        if ($test<2) {
+            $teams = new Team();
+
+           $teams->imgPath = '/img/team/1.jpg';
+           
+            $teams->name = 'Jhon doe';
+            $teams->function = 'exemple';
+            $teams->boss = false;
+    
+            $teams->save();
+        }
         $teamnull1s = Team::where("boss",false)->get()->random(1);
         $teamnull2s = Team::where("boss",false)->get()->random(1);
         while ($teamnull1s[0]->id === $teamnull2s[0]->id) {
@@ -34,7 +57,7 @@ class HomeviewController extends Controller
         }
 
         $contacts = Contact::find(1);
-    
+        
        
         
         
