@@ -42,13 +42,14 @@
                         </div>
                     </div>
                     <!-- Post Comments -->
+                    
                     <div class="comments">
 
                      
                         <h2>Comments ({{$nbrcommentaire}})</h2>
                        
                         
-                        <ul class="comment-list">
+                        <ul class="comment-list" id="yas">
 
                             @foreach ($commentaires as $commentaire)
                                 @if ($commentaire->article_id === $article->id)
@@ -69,23 +70,32 @@
                         </ul>
                     </div>
                     <!-- Commert Form -->
-                    <div class="row">
+                    @if ($errors->get('message'))
+                        <div  class="alert alert-danger alert-dismissible">
+                            @foreach ($errors->all() as $error)
+                                <li>
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </div>
+                    @endif
+                    <div class="row" >
                         <div class="col-md-9 comment-from">
                             <h2>Leave a comment</h2>
 
-                        <form class="form-class" method="POST" action="/blog-post/{{$article->id}}/message" enctype="multipart/form-data">
+                        <form class="form-class" method="POST" action="/blog-post/{{$article->id}}/message#yas" enctype="multipart/form-data">
                                     @csrf
                                     @METHOD('PATCH')
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" name="name" placeholder="Your name">
+                                        <input type="text" name="name" placeholder="Your name" value="{{old('name')}}" >
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="email" placeholder="Your email">
+                                        <input type="text" name="email" placeholder="Your email" value="{{old('email')}}" >
                                     </div>
                                     <div class="col-sm-12">
-                                            <input type="text" name="sujet" placeholder="Subject">
-                                            <textarea name="message" placeholder="Message"></textarea>
+                                            <input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}" >
+                                            <textarea name="message" placeholder="Message" >{{old('message')}}</textarea>
                                         <button class="site-btn" type="submit" >send</button>
                                     </div>
                                 </div>

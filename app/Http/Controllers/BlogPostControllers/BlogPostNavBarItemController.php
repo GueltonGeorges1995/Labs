@@ -19,6 +19,7 @@ use App\Tag;
 Use App\Category;
 use App\Commentaire;
 use Auth;
+use App\Http\Requests\CommentaireFormRequest;
 class BlogPostNavBarItemController extends Controller
 {
     public  function  index($id){
@@ -58,7 +59,7 @@ class BlogPostNavBarItemController extends Controller
     return  view ('blogPostView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','article','tags','categories','commentaires','nbrcommentaire','user','author'));
     }
 
-    public function store($id, Request $request){
+    public function store($id, CommentaireFormRequest $request){
         $commentaire = new Commentaire();
        
         $commentaire->name = request('name');
@@ -72,7 +73,7 @@ class BlogPostNavBarItemController extends Controller
        
         $commentaire->save();
       
-        return back();
+        return redirect('/blog-post/boneid' . '#yas');
 
     }
     

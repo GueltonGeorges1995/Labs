@@ -20,14 +20,14 @@
 							@csrf
 							<div class="row">
 								<div class="col-sm-6">
-									<input type="text" name="name" placeholder="Your name" value="{{old('name')}}" >
+									<input type="text" name="name" placeholder="Your name" value="{{old('name')}}" required>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}" >
+									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}" required>
 								</div>
 								<div class="col-sm-12">
-									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}" >
-									<textarea name="message" placeholder="Message" >{{old('message')}}</textarea>
+									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}" required>
+									<textarea name="message" placeholder="Message" required>{{old('message')}}</textarea>
 									<button type="submit" class="site-btn" id="something3">send</button>
 								</div>
 							</div>
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</div>
-		@if ($errors->any())
+		@if ($errors->has('name'))
 					<div  class="alert alert-danger alert-dismissible">
 							@foreach ($errors->all() as $error)
 							<li>

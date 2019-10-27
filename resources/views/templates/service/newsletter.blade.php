@@ -1,7 +1,7 @@
 	<!-- newsletter section -->
 	<div class="newsletter-section spad" id="yo">
 		<div class="container">
-				@if ($errors->any())
+				@if ($errors->get('newEmail'))
 					<div  class="alert alert-danger alert-dismissible">
 						@foreach ($errors->all() as $error)
 							<li>
