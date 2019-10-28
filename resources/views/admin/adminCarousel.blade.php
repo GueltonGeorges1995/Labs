@@ -38,7 +38,8 @@
               @foreach ($carouselitems as $carouselitem)
                   <tr>
                   <td>{{$carouselitem->id}}</td>
-                  <td>{{$carouselitem->imgPath}}</td>
+                  
+                  <td><img src="/{{$carouselitem->imgPath}}" alt="" style='width:100px;' ></td>
                   <td><a href="/admin/carousel/{{$carouselitem->id}}/delete" class="btn btn-danger">Delete</a></td>
                   </tr>
               @endforeach

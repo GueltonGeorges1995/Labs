@@ -51,12 +51,12 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Téléphone : </label>
-            <input type="text" class="form-control" value="{{$contacts->phone}}" name="phone" required>
+            <input type="number" class="form-control" value="{{$contacts->phone}}" name="phone" required>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Email : </label>
-            <input type="text" class="form-control" value="{{$contacts->email}}" name="email" required>
+            <input type="email" class="form-control" value="{{$contacts->email}}" name="email" required>
         </div>
 
     

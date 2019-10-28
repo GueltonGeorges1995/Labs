@@ -10,7 +10,7 @@
 					@if ($article->published === 1)
 						<div class="post-item">
 								<div class="post-thumbnail">
-								<img src="/{{$article->imgPath}}" alt="">
+								<img src="{{$article->imgPath}}" alt="">
 									<div class="post-date">
 									<h2>{{$article->created_at->day}}</h2>
 									<h3>{{$article->created_at->shortEnglishMonth}} {{$article->created_at->year}}</h3>
@@ -43,7 +43,7 @@
 						<a href="">02.</a>
 						<a href="">03.</a> --}}
 						
-						{{$articles->links()}}
+						
 					
 						
 					</div>
@@ -69,7 +69,7 @@
 							<li><a href="#">Tellus ut nulla</a></li>
 							<li><a href="#">Etiam egestas viverra </a></li> --}}
 							@foreach ($categories as $category)
-								<li><a href="/blog/category/{{$category->id}}">{{$category->name}}</a></li>
+								<li><a href="#">{{$category->name}}</a></li>
 							@endforeach
 						</ul>
 					</div>

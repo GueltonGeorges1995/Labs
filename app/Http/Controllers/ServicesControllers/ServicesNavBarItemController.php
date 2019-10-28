@@ -84,7 +84,7 @@ class ServicesNavBarItemController extends Controller
         $newsletter->email = request('newEmail');
     
         $newsletter->save();
-        // return back();
-        return redirect('/service' . '#yo');
+        return back();
+        // return redirect('/service' . '#yo');
     }
 }

@@ -766,7 +766,9 @@ ul {
 	z-index: -1;
 }
 
-.form-class input[type="text"] {
+.form-class input[type="text"],
+.form-class input[type="email"]
+ {
 	width: 100%;
 	margin-bottom: 26px;
 	border: none;
@@ -775,7 +777,9 @@ ul {
 }
 
 .form-class input[type="text"]:focus,
-.form-class input[type="text"]:hover {
+.form-class input[type="text"]:hover,
+.form-class input[type="email"]:focus,
+.form-class input[type="email"]:hover {
 	outline: none;
 }
 
@@ -996,7 +1000,8 @@ ul {
 	text-align: right;
 }
 
-.nl-form input[type="text"] {
+.nl-form input[type="text"],
+.nl-form input[type="email"] {
 	border: none;
 	padding: 15px 30px;
 	height: 51px;
@@ -1008,7 +1013,9 @@ ul {
 }
 
 .nl-form input[type="text"]:focus,
-.nl-form input[type="text"]:hover {
+.nl-form input[type="text"]:hover, 
+.nl-form input[type="email"]:focus,
+.nl-form input[type="email"]:hover {
 	outline: none;
 }
 

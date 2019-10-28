@@ -34,8 +34,8 @@
                   <th>ID</th>
                   <th>imgPath</th>
                   <th>Titre</th>
-                  <th>user_id</th>
-                  <th>category_id</th>
+               
+                  <th>category name</th>
                   <th>tags</th>
                   <th>validate</th>
                   <th>Delete</th>
@@ -44,10 +44,13 @@
                 @foreach ($articles as $article)
                     <tr>
                         <td>{{$article->id}}</td>
-                        <td>{{$article->imgPath}}</td>
+                        <td><img src="/{{$article->imgPath}}" alt="" width="100px"> </td>
                         <td>{{$article->titre}}</td>
-                        <td>{{$article->user_id}}</td>
-                        <td>{{$article->category_id}}</td>
+                        
+                        <td>@foreach ($article->category()->get() as $category)
+                              
+                          {{$category->name}}
+                          @endforeach</td>
 
                         <td>@foreach ($article->tags()->get() as $tag)
                               
@@ -134,6 +137,7 @@
         
 
               <div class="box-footer">
+
                 <button type="submit" class="btn btn-primary">Ajouter</button>
               </div>
             </form>

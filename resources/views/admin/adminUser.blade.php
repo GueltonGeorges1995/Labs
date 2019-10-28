@@ -43,7 +43,7 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{{$user->id}}</td>
-                        <td>{{$user->imgPath}}</td>
+                        <td><img src="/{{$user->imgPath}}" alt="" width="100px"></td>
                         <td>{{$user->role}}</td>
                         <td>{{$user->email}}</td>
                         <td>

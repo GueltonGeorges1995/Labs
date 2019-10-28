@@ -19,7 +19,7 @@
 					<form class="nl-form" action="/service/new#yo" method="POST">
 						@csrf
 						@METHOD('PATCH')
-						<input type="text" placeholder="Your e-mail here" name="newEmail" required>
+						<input type="email" placeholder="Your e-mail here" name="newEmail" required>
 						<button type="submit" class="site-btn btn-2">Newsletter</button>
 					</form>
 				</div>

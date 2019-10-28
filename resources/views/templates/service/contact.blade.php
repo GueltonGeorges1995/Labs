@@ -23,7 +23,7 @@
 									<input type="text" name="name" placeholder="Your name" value="{{old('name')}}" required>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" name="email" placeholder="Your email" value="{{old('email')}}" required>
+									<input type="email" name="email" placeholder="Your email" value="{{old('email')}}" required>
 								</div>
 								<div class="col-sm-12">
 									<input type="text" name="sujet" placeholder="Subject" value="{{old('sujet')}}" required>

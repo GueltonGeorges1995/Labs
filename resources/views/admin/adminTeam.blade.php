@@ -40,10 +40,15 @@
                   <th>Delete</th>
                   <th>Update</th>
                 </tr>
+                
+                    
                 @foreach ($teams as $team)
+                @if ($team->function != 'exemple')
+                    
+                
                     <tr>
                         <td>{{$team->id}}</td>
-                        <td>{{$team->imgPath}}</td>
+                        <td> <img src="/{{$team->imgPath}}" alt="" style="width:100px;"></td>
                         <td>{{$team->name}}</td>
                         <td>{{$team->function}}</td>
                         <td>{{$team->boss}}</td>
@@ -57,7 +62,9 @@
                         </td>
                         <td><a href="/admin/team/{{$team->id}}/update" class="btn btn-success">Update</a></td>
                     </tr>
+                    @endif
                 @endforeach
+            
                 
               </tbody></table>
             </div>
@@ -76,7 +83,10 @@
                     <h4>Selectionner un nouveau chef</h4>
                       <select name="boss">
                           @foreach ($teams as $team)
-                              <option value="{{$team->id}}">{{$team->name}}</option>
+                          @if ($team->function != 'exemple')
+                          <option value="{{$team->id}}">{{$team->name}}</option>
+                          @endif
+                              
                           @endforeach
                       </select>
                 </div>

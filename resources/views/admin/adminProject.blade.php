@@ -39,7 +39,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <td>{{$project->id}}</td>
-                        <td>{{$project->imgPath}}</td>
+                        <td><img src="/{{$project->imgPath}}" alt="" width="100px"></td>
                         <td>{{$project->titre}}</td>
                         <td>{{$project->text}}</td>
                         <td><a href="/admin/project/{{$project->id}}/delete" class="btn btn-danger">Delete</a></td>
