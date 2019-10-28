@@ -220,7 +220,7 @@ return [
             'text' => 'Articles - editeur',
             'url'  => 'editeur/article',
             'icon' => 'fas fa-fw fa-lock',
-            'can' => 'guest'
+            'can' => 'editeur'
         ],
         [
             'text' => 'User',

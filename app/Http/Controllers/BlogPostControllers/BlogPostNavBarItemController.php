@@ -52,7 +52,9 @@ class BlogPostNavBarItemController extends Controller
         
         $user = User::all();
 
-        $author = User::where('id',$article->user_id)->get();
+        $author = User::withTrashed()->where('id',$article->user_id)->get();
+        // $author = User::withTrashed()->get();
+      
 
         // dd($author);
         

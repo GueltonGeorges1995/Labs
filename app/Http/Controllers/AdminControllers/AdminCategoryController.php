@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\CategoryRequest;
+use Auth;
+use App\User;
 class AdminCategoryController extends Controller
 {
     public function index(){
+        $user = Auth::user();
         $categories = Category::all();
 
-        return  view ('/admin/adminCategory',compact('categories'));
+        return  view ('/admin/adminCategory',compact('categories','user'));
     }
 
     public function create(CategoryRequest $request){

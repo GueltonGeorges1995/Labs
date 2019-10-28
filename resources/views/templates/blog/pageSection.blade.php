@@ -69,6 +69,7 @@
 							<li><a href="#">Tellus ut nulla</a></li>
 							<li><a href="#">Etiam egestas viverra </a></li> --}}
 							@foreach ($categories as $category)
+								
 								<li><a href="/blog/category/{{$category->id}}">{{$category->name}}</a></li>
 							@endforeach
 						</ul>
@@ -97,7 +98,7 @@
 							<li><a href="">web design</a></li>
 							<li><a href="">photography</a></li> --}}
 							@foreach ($tags as $tag)
-								<li><a href="">{{$tag->name}}</a></li>
+							<li><a href="/blog/tag/{{$tag->id}}">{{$tag->name}}</a></li>
 							@endforeach
 						</ul>
 					</div>

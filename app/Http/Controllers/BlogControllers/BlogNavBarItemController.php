@@ -147,4 +147,48 @@ class BlogNavBarItemController extends Controller
         $date = date('d-F-Y');
         return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories','commentaires','countSearch','date'));
     }
+
+    public function tag($id){
+        $navbaritems =  Navbaritem::find(1);
+        $introitems =  Introitem::find(1);
+        $carouselitems =  Carouselitem::all();
+        $servicetops = Service::all()->random(3);
+        $aboutitems =  Aboutitem::find(1);
+        $testimonialitems = Testimonialitem::all();
+        $services = Service::paginate(9);
+        $titres = Titre::find(1);
+        
+        $teamboss = Team::where("boss",true)->get();
+        $teamnull1s = Team::where("boss",false)->get()->random(1);
+        $teamnull2s = Team::where("boss",false)->get()->random(1);
+        while ($teamnull1s[0]->id === $teamnull2s[0]->id) {
+            $teamnull2s = Team::where("boss",false)->get()->random(1);
+        }
+
+        $contacts = Contact::find(1);
+
+        // $articles = Article::find($id);
+       
+        // $articles->tags()->get();
+             
+    //    dd($articles);
+
+   
+
+
+
+
+        $articles = Tag::find($id)->articles()->orderBy('created_at','desc')->paginate(3);
+       
+ $tags = Tag::all();
+        // $articles = Article::find($id)->tags($tag)->get();
+
+        $categories = Category::all();
+
+        $commentaires = Commentaire::all();
+        $countSearch = true;
+       
+        $date = date('d-F-Y');
+        return  view ('blogView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','articles','tags','categories','commentaires','countSearch','date'));
+    }
 }

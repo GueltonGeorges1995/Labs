@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->boolean('published')->default(false);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            $table->softDeletes();
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->on('categories')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });

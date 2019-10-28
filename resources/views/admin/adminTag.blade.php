@@ -41,9 +41,19 @@
                     <tr>
                         <td>{{$tag->id}}</td>
                         <td>{{$tag->name}}</td>
+                      @if ($user->role === 'editeur')
+                        <td><a href="/admin/tag" class="btn btn-danger" disabled>Delete</a></td>
+                      @else
                         <td><a href="/admin/tag/{{$tag->id}}/delete" class="btn btn-danger">Delete</a></td>
-                        <td><a href="/admin/tag/{{$tag->id}}/update" class="btn btn-success">Update</a></td>
+                      @endif
+                      @if ($user->role === 'editeur')
+                      <td><a href="/admin/tag" class="btn btn-success" disabled>Update</a></td>
                     </tr>
+                      @else
+                      <td><a href="/admin/tag/{{$tag->id}}/update" class="btn btn-success">Update</a></td>
+                    </tr>
+                      @endif
+                        
                 @endforeach
                 
               </tbody></table>

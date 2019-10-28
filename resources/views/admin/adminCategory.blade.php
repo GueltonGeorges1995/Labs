@@ -40,8 +40,19 @@
                     <tr>
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
+                        @if ($user->role === 'editeur')
+                        <td><a href="/admin/category" class="btn btn-danger" disabled>Delete</a></td>
+                        @else
                         <td><a href="/admin/category/{{$category->id}}/delete" class="btn btn-danger">Delete</a></td>
+                        @endif
+                        
+
+                        @if ($user->role === 'editeur')
+                        <td><a href="/admin/category" class="btn btn-success" disabled>Update</a></td>
+                        @else
                         <td><a href="/admin/category/{{$category->id}}/update" class="btn btn-success">Update</a></td>
+                        @endif
+                        
                     </tr>
                 @endforeach
                 

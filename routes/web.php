@@ -148,6 +148,8 @@ Route::get('/blog','BlogControllers\BlogNavBarItemController@index');
 Route::get('/blog-post/{id}','BlogControllers\BlogNavBarItemController@indexStore');
 Route::get('/search','BlogControllers\BlogNavBarItemController@search');
 Route::get('/blog/category/{id}','BlogControllers\BlogNavBarItemController@category');
+Route::get('/blog/tag/{id}','BlogControllers\BlogNavBarItemController@tag');
+
 // Contact Controller
 Route::get('/contact', 'ContactviewController@index');
 Route::get('/contact','ContactControllers\ContactNavBarItemController@index');

@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Http\Requests\userRequest;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AdminUserController extends Controller
 {
+use SoftDeletes;
+
     public function index(){
         $users = User::all();
         $currentUser =  Auth::user();
@@ -42,7 +45,8 @@ class AdminUserController extends Controller
     }
 
     public  function  delete($id){
-	    $res =  User::where('id',$id)->delete(); 
+        $res =  User::find($id)->delete();
+        
 	    return  redirect('/admin/user');
     }
 

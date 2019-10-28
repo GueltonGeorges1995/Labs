@@ -92,12 +92,12 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Password : </label>
-                        <input type="text" name="password" id="" class="form-control" required>
+                        <input type="password" name="password" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email : </label>
-                        <input type="text" name="email" id="" class="form-control" required>
+                        <input type="email" name="email" id="" class="form-control" required>
                     </div>
 
                     <div class="form-group">

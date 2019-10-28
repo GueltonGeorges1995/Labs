@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\Http\Requests\TagRequest;
+use Auth;
 class AdminTagController extends Controller
 {
     public  function  index(){
 
         $tags =  Tag::all();
-
-        return  view ('/admin/adminTag',compact('tags'));
+        $user = Auth::user();
+        return  view ('/admin/adminTag',compact('tags','user'));
     }
 
     public function create(TagRequest $request){
