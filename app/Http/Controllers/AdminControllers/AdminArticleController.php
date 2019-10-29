@@ -53,8 +53,10 @@ class AdminArticleController extends Controller
         
 
         $articles->user_id = Auth::id();
+        $user = Auth::user();
+
         
-        $articles->published = false;
+       
 
         if($request->hasFile('imgPath')){
             $file = $request->file('imgPath');
@@ -63,15 +65,28 @@ class AdminArticleController extends Controller
         }
         $img = $articles->imgPath;
 
-        $articles=Article::create([
-            "imgPath"=>$img,
-            "titre"=>request('titre'),
-            "text"=>request('text'),
-            "user_id"=>$articles->user_id,
-            "category_id"=>request('category'),
-        ]);
+        if ($user->role === 'admin') {
+            $articles=Article::create([
+                "imgPath"=>$img,
+                "titre"=>request('titre'),
+                "text"=>request('text'),
+                "user_id"=>$articles->user_id,
+                "category_id"=>request('category'),
+                "published" => 1,
+            ]);
+            
+        } else {
+            $articles=Article::create([
+                "imgPath"=>$img,
+                "titre"=>request('titre'),
+                "text"=>request('text'),
+                "user_id"=>$articles->user_id,
+                "category_id"=>request('category'),
+                "published" => 0,
+            ]);
+        }
        
-        
+       
 
         foreach ($tags as $tag ) {
             if (request($tag->name) === "on") {

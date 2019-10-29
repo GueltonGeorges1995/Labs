@@ -41,7 +41,7 @@ class ServicesNavBarItemController extends Controller
 
         $contacts = Contact::find(1);
     
-       $servicesgsm = Service::all()->take(-6);
+       $servicesgsm = Service::all()->take(-6)->reverse();
        $servicegauches = $servicesgsm->take(3);
        $servicedroites = $servicesgsm->take(-3);
        

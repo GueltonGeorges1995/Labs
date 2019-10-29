@@ -35,14 +35,20 @@
                 <th>Supprimer</th>
               
               </tr>
-              @foreach ($carouselitems as $carouselitem)
+
+              @if ($carouselCount === 0)
+                  
+              @else
+                  @foreach ($carouselitems as $carouselitem)
                   <tr>
                   <td>{{$carouselitem->id}}</td>
                   
-                  <td><img src="/{{$carouselitem->imgPath}}" alt="" style='width:100px;' ></td>
+                  <td><img src="{{$carouselitem->imgPath}}" alt="" style="width:100px;"></td>
                   <td><a href="/admin/carousel/{{$carouselitem->id}}/delete" class="btn btn-danger">Delete</a></td>
                   </tr>
-              @endforeach
+                  @endforeach
+              @endif
+              
               
          
               
@@ -68,7 +74,7 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Ajouter une image: </label>
-        <input type="file" class="form-control" value="{{$carouselitem->imgPath}}" name="imgPath" required>
+        <input type="file" class="form-control" name="imgPath" required>
       </div>
       
       

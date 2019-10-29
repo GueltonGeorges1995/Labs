@@ -23,7 +23,7 @@ class HomeviewController extends Controller
         $servicetops = Service::all()->random(3);
         $aboutitems =  Aboutitem::find(1);
         $testimonialitems = Testimonialitem::all();
-        $services = Service::paginate(9);
+        $services = Service::paginate(9)->fragment('to');
         $titres = Titre::find(1);
         
         $teamboss = Team::where("boss",true)->get();
@@ -59,9 +59,10 @@ class HomeviewController extends Controller
         $contacts = Contact::find(1);
         
        
+        $carouselCount =  $carouselitems->count();
+        // dd($carouselCount);
         
-        
-    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts'));
+    return  view ('homeView',compact('navbaritems','introitems','carouselitems','servicetops','aboutitems','testimonialitems','services','titres','teamboss','teamnull1s','teamnull2s','contacts','carouselCount'));
     } 
 
 

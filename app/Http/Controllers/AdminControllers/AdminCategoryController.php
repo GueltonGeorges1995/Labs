@@ -13,8 +13,10 @@ class AdminCategoryController extends Controller
     public function index(){
         $user = Auth::user();
         $categories = Category::all();
-
-        return  view ('/admin/adminCategory',compact('categories','user'));
+        $categoryCount = $categories->count();
+      
+       
+        return  view ('/admin/adminCategory',compact('categories','user','categoryCount'));
     }
 
     public function create(CategoryRequest $request){
@@ -31,7 +33,8 @@ class AdminCategoryController extends Controller
     
 
     public  function  delete($id){
-	    $res =  Category::where('id',$id)->delete(); // select le champ et la valeur
+        $res =  Category::where('id',$id)->delete();
+         // select le champ et la valeur
 	    return  redirect('/admin/category');
     }
 

@@ -8,7 +8,7 @@
 			</div>
 			<div class="row">
 				<!-- feature item -->
-				<div class="col-md-4 col-sm-4 features">
+				<div class="col-md-4 col-sm-4 features" >
 					{{-- <div class="icon-box light left">
 						<div class="service-text">
 							<h2>Get in the lab</h2>
@@ -20,7 +20,7 @@
 					</div> --}}
 
 					@foreach ($servicegauches as $servicegauche)
-						<div class="icon-box light left">
+						<div class="icon-box light left" style="display:flex; justify-content: flex-end; word-break: break-all;">
 							<div class="service-text">
 								<h2>{{$servicegauche->titre}}</h2>
 								<p>{{$servicegauche->text}}</p>

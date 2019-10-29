@@ -8,7 +8,7 @@
 				
 					@foreach ($servicetops as $servicetop)
 						<div class="col-md-4 col-sm-6">
-							<div class="lab-card">
+							<div class="lab-card" style="height:382px">
 								<div class="icon">
 								<i class="{{$servicetop->logo}}"></i>
 								</div>

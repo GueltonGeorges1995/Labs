@@ -41,7 +41,7 @@
                     <tr>
                         <td>{{$tag->id}}</td>
                         <td>{{$tag->name}}</td>
-                      @if ($user->role === 'editeur')
+                      @if ($user->role === 'editeur' || $tagCount === 1)
                         <td><a href="/admin/tag" class="btn btn-danger" disabled>Delete</a></td>
                       @else
                         <td><a href="/admin/tag/{{$tag->id}}/delete" class="btn btn-danger">Delete</a></td>

@@ -10,12 +10,22 @@ class AdminCarouselController extends Controller
 {
     public  function  index(){
         $carouselitems =  Carouselitem::all();
-        return  view ('/admin/adminCarousel',compact('carouselitems'));
+        $carouselCount =  $carouselitems->count();
+        // if ($carouselCount === 0) {
+        //     $carouselitems = new Carouselitem();
+        //     $carouselitems->imgPath = '/img/0.1.jpg';
+        //     $carouselitems->save();
+        // }
+        
+        return  view ('/admin/adminCarousel',compact('carouselitems','carouselCount'));
 
     }
 
     public  function  delete($id){
-	    $res =  Carouselitem::where('id',$id)->delete(); // select le champ et la valeur
+        $res =  Carouselitem::where('id',$id)->delete();
+       
+       
+         
 	    return  redirect('/admin/carousel');
     }
 

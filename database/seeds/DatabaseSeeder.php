@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(NavBarItemsTableSeeder::class);
         // $this->call(IntroitemsTableSeeder::class);
-        // $this->call(CarouselitemsTableSeeder::class);
+        $this->call(CarouselitemsTableSeeder::class);
         // $this->call(ServicesTableSeeder::class);
         // $this->call(AboutitemsTableSeeder::class);
         // $this->call(TestimonialitemsTableSeeder::class);

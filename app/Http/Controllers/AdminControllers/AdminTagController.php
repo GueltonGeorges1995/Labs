@@ -12,8 +12,10 @@ class AdminTagController extends Controller
     public  function  index(){
 
         $tags =  Tag::all();
+        $tagCount= $tags->count();
         $user = Auth::user();
-        return  view ('/admin/adminTag',compact('tags','user'));
+       
+        return  view ('/admin/adminTag',compact('tags','user','tagCount'));
     }
 
     public function create(TagRequest $request){

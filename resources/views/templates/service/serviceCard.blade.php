@@ -10,7 +10,7 @@
 							<div class="card-img">
 								<img src="{{$project->imgPath}}" alt="">
 							</div>
-							<div class="card-text">
+							<div class="card-text" style="min-height:295px;">
 								<h2>{{$project->titre}}</h2>
 								<p>{{$project->text}}</p>
 							</div>
